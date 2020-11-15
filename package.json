@@ -4,7 +4,8 @@
   "description": "online pc",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -16,10 +17,15 @@
     "url": "https://github.com/iceream/opc/issues"
   },
   "homepage": "https://github.com/iceream/opc#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.12.1",
+  "devDependencies": {},
+  "dependencies": {
     "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1"
-  },
-  "dependencies": {}
+    "babel-loader": "^8.2.1",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.4.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
 }
