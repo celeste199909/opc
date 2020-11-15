@@ -1,0 +1,29 @@
+.window {
+    width: 900px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    margin-left: -450px;
+    margin-top: -300px;
+
+    border-radius: 10px;
+}
+
+.window::after {
+    content: "X";
+    width: 1rem;
+    height: 1rem;
+    background-color: aliceblue;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1rem;
+    color: #000;
+}
