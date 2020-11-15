@@ -1,0 +1,116 @@
+@import "./reset.css";
+
+#main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/wallpaper0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 导航栏 */
+#nav {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#nav ul {
+    height: 1.5rem;
+}
+
+#nav li {
+    /* margin: 0 0.5rem; */
+    padding: 0 0.5rem;
+    line-height: 1.5rem;
+    cursor: pointer;
+}
+
+#nav li:hover {
+    background-color: rgb(172, 188, 202);
+}
+
+#nav .nav-left {
+    float: left;
+}
+
+#nav .nav-left li {
+    float: left;
+}
+
+#nav .nav-right {
+    float: right;
+}
+#nav .nav-right li {
+    float: right;
+}
+
+#full-screen-btn {
+    font-weight: 600;
+    color: #fff;
+}
+/* 导航栏右 */
+#full-screen-btn.active {
+    color: rgb(248, 112, 0);
+}
+
+/* 程序坞 */
+#dock {
+    height: 3rem;
+    position: fixed;
+    border-radius: 0.5rem 0.5rem 0 0;
+    left: 50%;
+    margin-left: -3rem;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+#dock .dock li {
+    box-sizing: border-box;
+    margin: 0 0.5rem;
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    float: left;
+}
+/* 应用程序 */
+/* 按钮 */
+.application-list-btn {
+
+}
+/* 列表 */
+#app {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(1rem);
+    display: none;
+}
+
+#app.active {
+    display: block;
+}
+
+.app {
+    padding: 5% 10%;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    overflow: hidden;
+}
+
+.app li {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(53, 56, 53);
+    border-radius: 50%;
+    margin: 1rem;
+    color: bisque;
+}
