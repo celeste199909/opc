@@ -1,7 +1,7 @@
 .window {
     width: 900px;
     height: 600px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #e8edee;
 
     position: fixed;
 
@@ -11,10 +11,55 @@
     margin-left: -450px;
     margin-top: -300px;
 
-    border-radius: 10px;
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
-.window::after {
+.window .tools-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    border-bottom: 1px solid #b9bebf;
+    box-shadow: 0 1px 1px 1px #d8ddde;
+}
+
+.window .tools-bar div {
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+}
+.window .tools-bar div:first-child {
+    color: orange;
+    background-color: orange;
+}
+
+.window .tools-bar div:nth-child(2) {
+    color: green;
+    background-color: green;
+}
+
+.window .tools-bar div:nth-child(3) {
+    color: red;
+    background-color: red;
+}
+
+.window .tools-bar div:hover {
+    /* background-color: rgb(169, 177, 184); */
+    color: #fff;
+}
+
+/* .window::after {
     content: "X";
     width: 1rem;
     height: 1rem;
@@ -26,4 +71,4 @@
     text-align: center;
     line-height: 1rem;
     color: #000;
-}
+} */

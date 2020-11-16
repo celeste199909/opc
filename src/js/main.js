@@ -35,27 +35,30 @@ import { Window } from "./window.js"
         }
     })
 
+    let openAppList = [];
+
     // 音乐
     let desktopEl = document.querySelector("#desktop");
     let desktopIcons = desktopEl.getElementsByTagName("i")
-    // console.log(desktopIcons);
 
-    let instanceMusic = null;
-    let instanceWindow = null;
+    // 关闭
+   
 
-    let wapper = document.querySelector("#main");
     desktopIcons[0].addEventListener("click", () => {
 
-        // console.log("音乐");
-        if (!instanceMusic) {
-            instanceMusic = new Window();
-        } 
-        if (instanceMusic.isOpen) {
-            instanceMusic.close(instanceMusic, instanceWindow);
-        } else {
-            instanceWindow = instanceMusic.open(wapper);
+        let hasOpenThisApp = openAppList.filter( (item) => {
+            return item.applicationName = "音乐";
+        })
+
+        if (hasOpenThisApp.length === 0) {
+            let musicWindow = new Window("音乐");
+            let res = musicWindow.open();
+            openAppList.push(res)
         }
-    })
+
+    }, false)
+
+    
 
 })(document);
 

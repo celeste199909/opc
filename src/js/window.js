@@ -1,23 +1,39 @@
 export class Window {
-    constructor (width = 900, height = 600) {
+    constructor (applicationName, width = 600, height = 400) {
+        this.wrapper = document.querySelector("#main");
+        this.applicationName = applicationName;
         this.width = width;
         this.height = height;
-        this.isOpen = false;
+
+        this.closeBtn = null;
     }
 
-    open (wrapper) {
-        let window = document.createElement("div");
-        window.classList.add("window");
-        wrapper.appendChild(window)
-        this.isOpen = true;
-        console.log("打开");
-        return window;
+    open () {
+        this.render(this.wrapper, windowTemplate)
+        return this;
     }
 
-    close (instanceMusic, instanceWindow) {
-        console.log("关闭");
-        instanceWindow.style.display = "none";
-        this.isOpen = false;
-        instanceMusic = null;
+    close (openAppList) {
+        console.log(1);
+        openAppList = null;
+    }
+
+    render (wrapper, template) {
+        let el = document.createElement("div");
+        el.innerHTML = template;
+
+        wrapper.appendChild(el);
+
+        this.closeBtn = el;
+
     }
 }
+
+let windowTemplate = 
+`<div class="window">
+    <div class="tools-bar">
+        <div>一</div>
+        <div>ロ</div>
+        <div class="close">X</div>
+    </div>
+</div>`
