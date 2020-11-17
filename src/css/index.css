@@ -163,7 +163,7 @@
 .app li {
     width: 4rem;
     height: 4rem;
-    background-color: rgb(53, 56, 53);
+    background-color: rgba(221, 221, 221, 0.582);
     border-radius: 50%;
     margin: 1rem;
     color: bisque;
