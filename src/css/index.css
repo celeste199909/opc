@@ -7,6 +7,7 @@
     background-image: url(../images/wallpapers/wallpaper2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 .clearfix::after {
