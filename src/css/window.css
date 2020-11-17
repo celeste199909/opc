@@ -1,18 +1,19 @@
 .window {
-    width: 900px;
-    height: 600px;
-    background-color: #e8edee;
+    /* width: 900px;
+    height: 600px; */
+    background-color: #e8edee83;
 
     position: fixed;
 
     top: 50%;
     left: 50%;
 
-    margin-left: -450px;
-    margin-top: -300px;
+    margin-left: -300px;
+    margin-top: -150px;
 
     border-radius: 0.5rem;
     overflow: hidden;
+
 }
 
 .window .tools-bar {
@@ -39,7 +40,7 @@
     border-radius: 50%;
     margin: 0 0.5rem;
 }
-.window .tools-bar div:first-child {
+/* .window .tools-bar div:first-child {
     color: orange;
     background-color: orange;
 }
@@ -49,11 +50,11 @@
     background-color: green;
 }
 
-.window .tools-bar div:nth-child(3) {
+ */
+ .window .tools-bar div.close {
     color: red;
     background-color: red;
 }
-
 .window .tools-bar div:hover {
     /* background-color: rgb(169, 177, 184); */
     color: #fff;

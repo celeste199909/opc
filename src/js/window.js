@@ -4,36 +4,52 @@ export class Window {
         this.applicationName = applicationName;
         this.width = width;
         this.height = height;
-
-        this.closeBtn = null;
     }
 
-    open () {
-        this.render(this.wrapper, windowTemplate)
-        return this;
+    open (openAppList) {
+        this.render(this.wrapper, openAppList)
     }
 
-    close (openAppList) {
-        console.log(1);
-        openAppList = null;
+    close (wrapper, openAppList) {
+        let appIndex;
+
+        openAppList.forEach( (item, index) => {
+            if (item.applicationName === this.applicationName) {
+                appIndex = index;
+                return;
+            }
+        })
+
+        let window = document.querySelector(`.${this.applicationName}`);
+        wrapper.removeChild(window)
+
+        openAppList.splice(appIndex, 1)
     }
 
-    render (wrapper, template) {
-        let el = document.createElement("div");
-        el.innerHTML = template;
+    render (wrapper, openAppList) {
+        // 创建 window
+        let window = document.createElement("div");
+        window.classList.add("window");
+        window.classList.add(this.applicationName);
+         // 宽高
+        window.style.width = this.width + "px";
+        window.style.height = this.height + "px";
+        // 创建 window 的工具栏
+        let toolsBar = document.createElement("div");
+        toolsBar.classList.add("tools-bar");
+        // 创建 window的工具栏的 关闭按钮
+        let closeBtn = document.createElement("div");
+        closeBtn.classList.add("close");
+        closeBtn.innerText = "X";
+        // 依次 插入元素
+        toolsBar.appendChild(closeBtn);
+        window.appendChild(toolsBar);
+        wrapper.appendChild(window);
 
-        wrapper.appendChild(el);
-
-        this.closeBtn = el;
+        // 给关闭按钮绑定事件
+        closeBtn.addEventListener("click", () => {
+            this.close(wrapper, openAppList)
+        })
 
     }
 }
-
-let windowTemplate = 
-`<div class="window">
-    <div class="tools-bar">
-        <div>一</div>
-        <div>ロ</div>
-        <div class="close">X</div>
-    </div>
-</div>`

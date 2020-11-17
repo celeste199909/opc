@@ -35,30 +35,37 @@ import { Window } from "./window.js"
         }
     })
 
+    // 用来保存以打开的应用程序
     let openAppList = [];
 
-    // 音乐
+    // 获取桌面上应用程序列表
     let desktopEl = document.querySelector("#desktop");
-    let desktopIcons = desktopEl.getElementsByTagName("i")
+    let desktopIcons = desktopEl.getElementsByTagName("i");
 
     // 关闭
    
 
     desktopIcons[0].addEventListener("click", () => {
+        openApplication ("音乐");
+    })
+
+    desktopIcons[1].addEventListener("click", () => {
+        openApplication ("应用商店");
+    })
+
+    // 应用程序的打开方法，参数 应用程序的名字
+    function openApplication (name) {
 
         let hasOpenThisApp = openAppList.filter( (item) => {
-            return item.applicationName = "音乐";
+            return item.applicationName === name;
         })
 
         if (hasOpenThisApp.length === 0) {
-            let musicWindow = new Window("音乐");
-            let res = musicWindow.open();
-            openAppList.push(res)
+            let musicWindow = new Window(name);
+            openAppList.push(musicWindow)
+            musicWindow.open(openAppList);
         }
-
-    }, false)
-
-    
+    }
 
 })(document);
 
