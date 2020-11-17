@@ -59,17 +59,3 @@
     /* background-color: rgb(169, 177, 184); */
     color: #fff;
 }
-
-/* .window::after {
-    content: "X";
-    width: 1rem;
-    height: 1rem;
-    background-color: aliceblue;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 1rem;
-    color: #000;
-} */

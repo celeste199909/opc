@@ -40,10 +40,9 @@ import { Window } from "./window.js"
 
     // 获取桌面上应用程序列表
     let desktopEl = document.querySelector("#desktop");
-    let desktopIcons = desktopEl.getElementsByTagName("i");
+    let desktopIcons = desktopEl.querySelectorAll(".app-icon");
 
-    // 关闭
-   
+   console.log(desktopIcons);
 
     desktopIcons[0].addEventListener("click", () => {
         openApplication ("音乐");
@@ -51,6 +50,18 @@ import { Window } from "./window.js"
 
     desktopIcons[1].addEventListener("click", () => {
         openApplication ("应用商店");
+    })
+
+    desktopIcons[2].addEventListener("click", () => {
+        openApplication ("计算器");
+    })
+
+    desktopIcons[3].addEventListener("click", () => {
+        openApplication ("短信");
+    })
+
+    desktopIcons[4].addEventListener("click", () => {
+        openApplication ("设置");
     })
 
     // 应用程序的打开方法，参数 应用程序的名字

@@ -4,7 +4,7 @@
 #main {
     width: 100vw;
     height: 100vh;
-    background-image: url(../images/wallpaper1.jpg);
+    background-image: url(../images/wallpapers/wallpaper2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -73,7 +73,7 @@
     padding: 1rem;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(14, 1fr);
     grid-template-rows: repeat(7, 1fr);
 
     justify-items: center;
@@ -84,8 +84,14 @@
     cursor: pointer;
 }
 
-#desktop>div i {
-    font-size: 4rem;
+#desktop .app-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+#desktop .app-icon img {
+    width: 100%;
+    height: 100%;
 }
 
 /* 程序坞 */
