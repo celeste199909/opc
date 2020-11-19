@@ -1,5 +1,4 @@
 node_modules/
-pxcook/
-node.md
-webpack.config.js
-yarn-error.log
+./node.md
+./webpack.config.js
+./yarn-error.log
