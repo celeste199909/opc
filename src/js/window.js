@@ -1,29 +1,10 @@
+
 export class Window {
     constructor(applicationName, width = 600, height = 400) {
         this.wrapper = document.querySelector("#main");
         this.applicationName = applicationName;
         this.width = width;
         this.height = height;
-    }
-    // 打开 window
-    open(openAppList) {
-        this.render(this.wrapper, openAppList)
-    }
-    // 使用关闭按钮关闭 window
-    close(wrapper, openAppList) {
-        let appIndex;
-
-        openAppList.forEach((item, index) => {
-            if (item.applicationName === this.applicationName) {
-                appIndex = index;
-                return;
-            }
-        })
-
-        let window = document.querySelector(`.${this.applicationName}`);
-        wrapper.removeChild(window)
-
-        openAppList.splice(appIndex, 1)
     }
     // 渲染 window
     render(wrapper, openAppList) {
@@ -46,52 +27,86 @@ export class Window {
         window.appendChild(toolsBar);
         wrapper.appendChild(window);
 
-
-
         // 给关闭按钮绑定事件
-        closeBtn.addEventListener("click", () => {
-            this.close(wrapper, openAppList)
+        closeBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            this.close(wrapper, openAppList);
         })
         // 给工具栏绑定拖拽事件
-        toolsBar.addEventListener("click", () => {
-            console.log("拖拽");
-        })
-        // let nav = document.querySelector(".nav");
+        toolsBar.addEventListener("click", this.drag(toolsBar, window))
+        // 拖拽
+    }
+    // 打开 window
+    open(openAppList) {
+        this.render(this.wrapper, openAppList)
+    }
+    // 使用关闭按钮关闭 window
+    close(wrapper, openAppList) {
+        let appIndex;
 
-        let isOnDraging = false;
-
-        let mouseLeft = 0;
-        let mouseTop = 0;
-
-        let mouseX = 0;
-        let mouseY = 0;
-
-        toolsBar.addEventListener("mousedown", (e) => {
-            isOnDraging = true;
-            console.log("现在处于拖动状态");
-            mouseTop = e.offsetY;
-            mouseLeft = e.offsetX;
-            console.log(mouseLeft, mouseTop);
-        })
-        toolsBar.addEventListener("mousemove", (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            // console.log(mouseX, mouseY);
-            if (isOnDraging) {
-                window.style.left = (mouseX - mouseLeft) + "px";
-                window.style.top = (mouseY - mouseTop) + "px";
+        openAppList.forEach((item, index) => {
+            if (item.applicationName === this.applicationName) {
+                appIndex = index;
+                return;
             }
         })
 
-        toolsBar.addEventListener("mouseup", (e) => {
-            isOnDraging = false;
-            console.log("现在已经离开拖动状态");
-        })
+        let window = document.querySelector(`.${this.applicationName}`);
+        wrapper.removeChild(window)
 
-        toolsBar.addEventListener("mouseleave", (e) => {
-            isOnDraging = false;
-            console.log("现在已经离开拖动状态");
-        })
-
+        openAppList.splice(appIndex, 1)
     }
+    // 拖拽(可拖拽区域，窗口)
+    drag (dragAbleArea, window) {
+        let isOnDraging = false;
+        // 鼠标与元素的距离
+        let distanceFromWindowTop = 0;
+        let distanceFromWindowLeft = 0;
+        // 鼠标与视口的距离
+        let distanceFromViewTop = 0;
+        let distanceFromViewLeft = 0;
+
+        function mousemoveCallback (e) {
+       
+                if (isOnDraging) {
+                    let top = distanceFromViewTop - distanceFromWindowTop;
+                    let left = distanceFromViewLeft - distanceFromWindowLeft;
+                    window.style.top = top + "px";
+                    window.style.left = left + "px";
+
+                    distanceFromViewLeft = e.clientX;
+
+                    if (top < 0) {
+                        window.style.top = 0;
+                        distanceFromViewTop = distanceFromWindowTop;
+                    } else {
+                        distanceFromViewTop = e.clientY;
+                    }
+   
+                }
+        }
+
+        dragAbleArea.addEventListener("mousedown", (e) => {
+            isOnDraging = true;
+            distanceFromWindowTop = e.offsetY;
+            distanceFromWindowLeft = e.offsetX;
+
+            distanceFromViewTop = e.clientY;
+            distanceFromViewLeft = e.clientX;
+
+            document.body.addEventListener("mousemove", mousemoveCallback)
+
+        })
+
+        dragAbleArea.addEventListener("mouseup", (e) => {
+            isOnDraging = false;
+            document.body.removeEventListener("mousemove", mousemoveCallback)
+        })
+
+        // dragAbleArea.addEventListener("mouseleave", (e) => {
+        //     document.removeEventListener("mousemove", mousemoveCallback)
+        //     isOnDraging = false;
+        // })
+    }
+    
 }

@@ -1,69 +1,43 @@
-import { Window } from "./window.js"
+import { Window } from "./Window.js"
+import { applications } from "../data/applications.js"
+import { App } from "./App.js"
+
 (function (doc) {
     let main = doc.querySelector("#main");
     let fullScreenBtn = doc.querySelector("#full-screen-btn");
     let desktopArea = doc.querySelector("#desktop");
-    let applicationBtn = doc.querySelector(".application-list-btn");
-    let applicationList = doc.querySelector("#app");
+
+    // 用来保存以打开的应用程序
+    let openAppList = [];
 
     // 初始化
     ( function init () {
         fullScreen(fullScreenBtn, main);
+        loadingApplications (desktopArea, applications);
     })();
 
     // 全屏(触发全屏的按钮, 要全屏的元素)
-    function fullScreen (triggerEl, targetEl) {
-        triggerEl.addEventListener("click", () => {
+    function fullScreen (triggerBtn, targetEl) {
+        triggerBtn.addEventListener("click", () => {
             if (!doc.fullscreenElement) {
                 targetEl.requestFullscreen();
-                triggerEl.classList.add("active");
             } else {
                 doc.exitFullscreen();
-                triggerEl.classList.remove("active");
             }
         })
     }
 
     // 应用程序列表 打开/关闭
-    applicationBtn.addEventListener("click", () => {
-        if (!applicationList.classList.length) {
-            applicationList.classList.add("active");
-            desktopArea.style.display = "none";
-        } else {
-            applicationList.classList.remove("active");
-            desktopArea.style.display = "grid";
-        }
-    })
-
-    // 用来保存以打开的应用程序
-    let openAppList = [];
-
-    // 获取桌面上应用程序列表
-    let desktopEl = document.querySelector("#desktop");
-    let desktopIcons = desktopEl.querySelectorAll(".app-icon");
-
-   console.log(desktopIcons);
-
-    desktopIcons[0].addEventListener("click", () => {
-        openApplication ("音乐");
-    })
-
-    desktopIcons[1].addEventListener("click", () => {
-        openApplication ("应用商店");
-    })
-
-    desktopIcons[2].addEventListener("click", () => {
-        openApplication ("计算器");
-    })
-
-    desktopIcons[3].addEventListener("click", () => {
-        openApplication ("短信");
-    })
-
-    desktopIcons[4].addEventListener("click", () => {
-        openApplication ("设置");
-    })
-
+    // applicationBtn.addEventListener("click", () => {
+    //     if (!applicationList.classList.length) {
+    //         console.log(1);
+    //         applicationList.classList.add("active");
+    //         desktopArea.style.display = "none";
+    //     } else {
+    //         applicationList.classList.remove("active");
+    //         desktopArea.style.display = "grid";
+    //     }
+    // })
     // 应用程序的打开方法，参数 应用程序的名字
     function openApplication (name) {
 
@@ -72,12 +46,29 @@ import { Window } from "./window.js"
         })
 
         if (hasOpenThisApp.length === 0) {
-            let musicWindow = new Window(name);
-            openAppList.push(musicWindow)
-            musicWindow.open(openAppList);
+            let newWindow = new Window(name);
+            openAppList.push(newWindow);
+            newWindow.open(openAppList);
         }
-    }
 
+        let app = new App(name);
+        app.render();
+    }
+    // 加载应用列表(加载的区域，应用列表)
+    function loadingApplications (area, applications) {
+
+        applications.forEach(element => {
+
+            let app = document.createElement("div");
+            app.classList.add("app-icon");
+            app.innerHTML = `<img src="./images/applications/${element.icon}">`;
+            // 绑定打开事件
+            app.addEventListener("click", () => {
+                openApplication (element.name);
+            })
+            area.appendChild(app);
+        });
+    }
 })(document);
 
 

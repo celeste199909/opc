@@ -1,4 +1,4 @@
-export default apps = [
+export let applications = [
     {name: "音乐", icon: "music.png"},
     {name: "设置", icon: "setting.png"},
     {name: "应用商店", icon: "app-shop.png"},

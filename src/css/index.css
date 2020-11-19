@@ -8,63 +8,108 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-}
-
-.clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
+    overflow: hidden;
 }
 
 /* 导航栏 */
 #nav {
-    width: 100%;
-    background-color: rgba(172, 172, 172, 0.2);
+    width: 100vw;
+    padding: 0 10px;
+    height: 1.5rem;
+    background-color: rgba(172, 172, 172, 0.336);
     backdrop-filter: blur(5px);	
-    /* color: #ebf1f2; */
+    -webkit-backdrop-filter: blur(5px);	
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
 }
-
-#nav ul {
+/* 导航栏的左右项 */
+#nav > div {
+    line-height: 1.5rem;
     height: 1.5rem;
 }
-
-#nav li {
-    /* margin: 0 0.5rem; */
-    padding: 0 0.5rem;
-    line-height: 1.5rem;
+/* 导航栏中的一项 */
+#nav .nav-item {
+    padding: 0 10px;
     cursor: pointer;
+    position: relative;
 }
-
-#nav li:hover {
+#nav > div > div:hover {
     background-color: rgba(212, 212, 212, 0.281);
     border-radius: 0.2rem;
 }
+/* 菜单 */
+#nav > div > div .menu::before {
+    box-sizing: border-box;
+    /* padding: 5px 0; */
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.774);
+    z-index: -1;
+    filter: blur(0.5px);
+}
+#nav > div > div .menu {
+    width: 180px;
+    color: #000;
+    position: absolute;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    /* padding: 5px 0; */
+    border-radius: 5px;
+    background-color: rgba(224, 221, 221, 0.678);
+}
+#nav > div > div .menu li:first-child {
+    margin-top: 10px;
+}
 
-#nav .nav-left {
+#nav > div > div .menu li:last-child {
+    margin-bottom: 10px;
+}
+
+.menu li {
+    padding: 2px 10px;
+}
+
+.menu li:hover {
+    border-radius: 5px;
+    background-color: #327dfb;
+    color: #fff;
+}
+
+#nav > div > div:hover .menu {
+    display: flex;
+}
+
+#nav > div > div {
+    position: relative;
+}
+
+#nav .left {
     float: left;
 }
 
-#nav .nav-left li {
+#nav .left .nav-item {
     float: left;
 }
+/* 导航栏右 */
 
-#nav .nav-right {
+#nav .right {
     float: right;
 }
-#nav .nav-right li {
-    float: right;
+#nav .right .nav-item {
+    float: left;
 }
 
 #full-screen-btn {
+    width: 1.5rem;
+    height: 1.5rem;
     font-weight: 600;
     color: #fff;
 }
-/* 导航栏右 */
-/* #full-screen-btn.active {
-    color: #0a60ff;
-} */
 
 /* 桌面 */
 #desktop {
@@ -81,7 +126,7 @@
     align-items: center;
 }
 
-#desktop>div {
+#desktop > div {
     cursor: pointer;
 }
 
@@ -93,6 +138,7 @@
 #desktop .app-icon img {
     width: 100%;
     height: 100%;
+    user-select: none;
 }
 
 /* 程序坞 */
@@ -133,12 +179,13 @@
 #dock .dock li img {
     width: 100%;
     height: 100%;
+    user-select: none;
 }
 /* 应用程序 */
 /* 按钮 */
-.application-list-btn {
+/* .application-list-btn {
 
-}
+} */
 /* 列表 */
 #app {
     width: 100%;
