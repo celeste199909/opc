@@ -97,13 +97,11 @@
 
 /* 程序坞 */
 #dock {
-    /* width: 100%; */
+    width: 100%;
     height: 3rem;
     position: fixed;
     bottom: 0;
     z-index: 100;
-    left: 50%;
-    margin-left: -1.5rem;
     /* background-color: rgba(0, 0, 0, 0.4); */
     display: flex;
     justify-content: center;
@@ -111,23 +109,23 @@
 }
 
 .dock {
-    position: absolute;
-    left: 50%;
-    bottom: 0.2rem;
-    margin-left: -3rem;
+    height: 100%;
     background-color: rgba(238, 238, 238, 0.349);
     backdrop-filter: blur(5px);	
     border-radius: 1rem;
     border: 1px solid #b3b3b352;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 #dock .dock li {
     box-sizing: border-box;
     margin: 0 0.5rem;
-    font-size: 2.8rem;
-    width: 3rem;
-    height: 3rem;
-    float: left;
+    /* font-size: 2.8rem; */
+    width: 2.5rem;
+    height: 2.5rem;
     cursor: pointer;
     text-align: center;
 }
