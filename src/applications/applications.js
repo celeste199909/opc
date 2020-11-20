@@ -1,20 +1,29 @@
-import { startup } from "./start-up/startup.js"
-import { music } from "./music/music.js";
+import { startup } from "./startup/index.js"
+import { music } from "./music/index.js";
+import { appstore } from "./appstore/index.js";
+import { calculator } from "./calculator/index.js";
+import { setting } from "./setting/index.js";
+import { trash } from "./trash/index.js";
 
 export let desktopApp = [
-    startup,
-    music
+    music,
+    appstore,
+    calculator,
+    setting,
 ]
 
-// export let desktopApp = [
-//     {name: "音乐", icon: "music.png"},
-//     {name: "设置", icon: "setting.png"},
-//     {name: "应用商店", icon: "app-shop.png"},
-//     {name: "启动台", icon: "start-up.png"},
-//     {name: "计算器", icon: "calculator.png"},
-//     {name: "短信", icon: "duanxin.png"}
-// ]
-
 export let dockApp = [
-    startup
+    startup,
+    setting,
+    trash
+]
+
+export let appList = [
+    music,
+    appstore,
+    calculator,
+    setting,
+    startup,
+    setting,
+    trash
 ]

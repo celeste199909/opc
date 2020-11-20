@@ -1,0 +1,99 @@
+
+/* 导航栏样式 */
+.window.音乐 .tools-bar{
+    background-color: rgba(29, 29, 29, 0.89); 
+    backdrop-filter: blur(24px);
+    /* color: black; */
+}
+
+.music {
+    display: flex;
+    background-color: rgba(29, 29, 29, 0.89); 
+    backdrop-filter: blur(24px);
+    padding: 10px 15px;
+}
+/* 左 */
+.music .music-left {
+    padding: 10px 15px;
+    flex: 3;
+}
+
+.music .music-left .title {
+    color: rgb(144, 144, 144);
+    margin-bottom: 20px;
+
+}
+
+.music .music-left .list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.music .music-left .list li {
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 4px;
+    text-indent: 1rem;
+    user-select: none;
+}
+.music .music-left .list li:hover {
+    background-color: #327dfb;
+}
+/* 右 */
+
+.music .music-right {
+    /* padding: 10px 15px; */
+    flex: 8;
+    position: relative;
+    box-sizing: border-box;
+}
+.music .music-right input {
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    text-indent: 1em;
+    background-color: #333;
+}
+.music .music-right .title {
+    margin: 20px 2px;
+    font-size: 25px;
+}
+.music .music-right .cate {
+    display: flex;
+    margin: 10px 2px;
+}
+
+.music .music-right .cate li {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin-right: 20px;
+}
+/* 音乐列表 */
+.music .music-right .music-list {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 0;
+}
+
+.music .music-right .music-list tr {
+    text-align: left;
+    height: 2.5rem;
+}
+.music .music-right .music-list .td:hover {
+    background-color: #327dfb;
+}
+
+
+/* 播放组件 */
+.player {
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(29, 29, 29, 0.89); 
+    backdrop-filter: blur(24px);
+}

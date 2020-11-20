@@ -5,12 +5,12 @@ export class Window {
     }
 
     renderOpen (options, hasOpenAppList) {
-        console.log(options);
+        // console.log(options);
         let { width, height, appName, appTemplate } = options;
         // 创建 window
         let window = document.createElement("div");
         window.classList.add("window");
-        window.classList.add(this.appName);
+        window.classList.add(appName);
         // 宽高
         window.style.width = width + "px";
         window.style.height = height + "px";
@@ -49,54 +49,22 @@ export class Window {
     renderClose () {
 
     }
-    // 渲染 window
-    // render(name, wrapper, openAppList, template) {
-    //     // 创建 window
-    //     let window = document.createElement("div");
-    //     window.classList.add("window");
-    //     window.classList.add(this.applicationName);
-    //     // 宽高
-    //     window.style.width = this.width + "px";
-    //     window.style.height = this.height + "px";
-    //     // 创建 window 的工具栏
-    //     let toolsBar = document.createElement("div");
-    //     toolsBar.classList.add("tools-bar");
-
-    //     // 创建应用名
-    //     let appName = document.createElement("div");
-    //     appName.classList.add("app-name");
-    //     appName.innerHTML = `${name}`;
-    //     // 创建 window的工具栏的 关闭按钮
-    //     let closeBtn = document.createElement("div");
-    //     closeBtn.classList.add("close");
-    //     closeBtn.innerText = "×";
-    //     // 依次 插入元素
-    //     toolsBar.appendChild(appName);
-    //     toolsBar.appendChild(closeBtn);
-    //     window.appendChild(toolsBar);
-    //     window.appendChild(template);
-    //     wrapper.appendChild(window);
-
-    //     // 给关闭按钮绑定事件
-    //     closeBtn.addEventListener("click", (e) => {
-    //         this.close(wrapper, openAppList);
-    //     })
-    //     // 给工具栏绑定拖拽事件
-    //     toolsBar.addEventListener("click", this.drag(toolsBar, window))
-    //     // 拖拽
-    // }
     // 使用关闭按钮关闭 window
     close(wrapper, hasOpenAppList) {
+
+        // 在视图上移出 窗口
+        let window = document.querySelector(`.${this.options.appName}`);
+        console.log(window);
+        wrapper.removeChild(window)
+        // // 在以打开应用列表中删除
         let appIndex;
         hasOpenAppList.forEach((item, index) => {
-            if (item.applicationName === this.applicationName) {
+            if (item.applicationName === this.options.appName) {
                 appIndex = index;
                 return;
             }
         })
-        let window = document.querySelector(`.${this.applicationName}`);
-        wrapper.removeChild(window)
-
+        console.log(this);
         hasOpenAppList.splice(appIndex, 1)
     }
     // 拖拽(可拖拽区域，窗口)
@@ -110,7 +78,6 @@ export class Window {
         let distanceFromViewLeft = 0;
 
         function mousemoveCallback (e) {
-       
                 if (isOnDraging) {
                     let top = distanceFromViewTop - distanceFromWindowTop;
                     let left = distanceFromViewLeft - distanceFromWindowLeft;

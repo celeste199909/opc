@@ -1,9 +1,9 @@
 .window {
     /* width: 900px;
     height: 600px; */
-    background-color: #e8edeee7;
-    backdrop-filter: blur(12px); 
-    /* border-bottom: 1px solid #b9bebf; */
+    /* background-color: #e8edeee7; */
+    /* backdrop-filter: blur(12px);  */
+    border-bottom: 1px solid #1a191911;
 
     position: absolute;
 
@@ -29,7 +29,6 @@
     align-items: center;
 
     background-color: #b9bebf94;
-
 }
 
 .app-name {
@@ -73,7 +72,7 @@
 /* 窗口主要内容 */
 .window .template-wrapper {
     height: 100%;
-    background: rgb(75, 146, 212);
+    background: rgba(75, 146, 212, 0.568);
     padding-top: 40px;
     box-sizing: border-box;
 }

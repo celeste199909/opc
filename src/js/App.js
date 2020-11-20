@@ -3,31 +3,20 @@ import { Window } from "./Window.js"
 export class App extends Window {
 
     constructor (options) {
-
         super();
         this.options = options;
 
     }
-
     openApp (hasOpenAppList) {
-        // let {appName, backgroundColor, userInterface} = this;
+        // 调用的是 Window 的render方法
         this.renderOpen(this.options, hasOpenAppList);
-        console.log(this.options);
     }
 
-    closeApp () {
-
+    closeApp (hasOpenAppList) {
+        console.log("closeApp",hasOpenAppList);
     }
-
 
     iconClickEvent () {
         this.openApp ();
     }
-
-
-    // open (wrapper, openAppList, template) {
-    //     let window = new Window(this.name)
-    //     openAppList.push(window);
-    //     window.render(this.name, wrapper, openAppList, template)
-    // }
 }

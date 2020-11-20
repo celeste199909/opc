@@ -2,7 +2,7 @@ import { Window } from "./Window.js"
 import { desktopApp, dockApp } from "../applications/applications.js"
 import { App } from "./App.js"
 
-import "./animation.js"
+import "./animation/animation.js"
 
 (function (doc) {
     let main = doc.querySelector("#main");
@@ -28,14 +28,10 @@ import "./animation.js"
             }
         })
     }
-
     // 加载应用列表(加载的区域，应用列表)
     function loadingApplications (area, applications) {
-
         applications.forEach(element => {
-            // let app = new App(element.appName);
             renderIcon(area, element);
-            // console.log(element);
         });
     }
     // 渲染图标
@@ -50,12 +46,11 @@ import "./animation.js"
         }
         // 给图标绑定点击事件
         iconEl.addEventListener ("click", () => {
-            // this.iconClickEvent ();
             element.start(hasOpenAppList);
-            // hasOpenAppList.push(element);
         })
         area.appendChild(iconEl);
     }
+    // 渲染样式
 })(document);
 
 
