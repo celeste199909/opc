@@ -1,62 +1,103 @@
 
 export class Window {
-    constructor(appName, width = 600, height = 400) {
+    constructor() {
         this.wrapper = document.querySelector("#main");
-        this.appName = appName;
-        this.width = width;
-        this.height = height;
     }
-    // 渲染 window
-    render(name, wrapper, openAppList, template) {
+
+    renderOpen (options, hasOpenAppList) {
+        console.log(options);
+        let { width, height, appName, appTemplate } = options;
         // 创建 window
         let window = document.createElement("div");
         window.classList.add("window");
-        window.classList.add(this.applicationName);
+        window.classList.add(this.appName);
         // 宽高
-        window.style.width = this.width + "px";
-        window.style.height = this.height + "px";
+        window.style.width = width + "px";
+        window.style.height = height + "px";
         // 创建 window 的工具栏
         let toolsBar = document.createElement("div");
         toolsBar.classList.add("tools-bar");
-
         // 创建应用名
-        let appName = document.createElement("div");
-        appName.classList.add("app-name");
-        appName.innerHTML = `${name}`;
+        let appNameEl = document.createElement("div");
+        appNameEl.classList.add("app-name");
+        appNameEl.innerHTML = `${appName}`;
         // 创建 window的工具栏的 关闭按钮
         let closeBtn = document.createElement("div");
         closeBtn.classList.add("close");
         closeBtn.innerText = "×";
+        // 创建 App 内容
+        let appTemplateWrapper = document.createElement("div");
+        appTemplateWrapper.classList.add("template-wrapper");
+        appTemplateWrapper.innerHTML = appTemplate;
+
         // 依次 插入元素
-        toolsBar.appendChild(appName);
+        toolsBar.appendChild(appNameEl);
         toolsBar.appendChild(closeBtn);
         window.appendChild(toolsBar);
-        window.appendChild(template);
-        wrapper.appendChild(window);
+        window.appendChild(appTemplateWrapper);
+        this.wrapper.appendChild(window);
 
         // 给关闭按钮绑定事件
         closeBtn.addEventListener("click", (e) => {
-            this.close(wrapper, openAppList);
+            this.close(this.wrapper, hasOpenAppList);
         })
         // 给工具栏绑定拖拽事件
         toolsBar.addEventListener("click", this.drag(toolsBar, window))
         // 拖拽
     }
-    // 使用关闭按钮关闭 window
-    close(wrapper, openAppList) {
-        let appIndex;
 
-        openAppList.forEach((item, index) => {
+    renderClose () {
+
+    }
+    // 渲染 window
+    // render(name, wrapper, openAppList, template) {
+    //     // 创建 window
+    //     let window = document.createElement("div");
+    //     window.classList.add("window");
+    //     window.classList.add(this.applicationName);
+    //     // 宽高
+    //     window.style.width = this.width + "px";
+    //     window.style.height = this.height + "px";
+    //     // 创建 window 的工具栏
+    //     let toolsBar = document.createElement("div");
+    //     toolsBar.classList.add("tools-bar");
+
+    //     // 创建应用名
+    //     let appName = document.createElement("div");
+    //     appName.classList.add("app-name");
+    //     appName.innerHTML = `${name}`;
+    //     // 创建 window的工具栏的 关闭按钮
+    //     let closeBtn = document.createElement("div");
+    //     closeBtn.classList.add("close");
+    //     closeBtn.innerText = "×";
+    //     // 依次 插入元素
+    //     toolsBar.appendChild(appName);
+    //     toolsBar.appendChild(closeBtn);
+    //     window.appendChild(toolsBar);
+    //     window.appendChild(template);
+    //     wrapper.appendChild(window);
+
+    //     // 给关闭按钮绑定事件
+    //     closeBtn.addEventListener("click", (e) => {
+    //         this.close(wrapper, openAppList);
+    //     })
+    //     // 给工具栏绑定拖拽事件
+    //     toolsBar.addEventListener("click", this.drag(toolsBar, window))
+    //     // 拖拽
+    // }
+    // 使用关闭按钮关闭 window
+    close(wrapper, hasOpenAppList) {
+        let appIndex;
+        hasOpenAppList.forEach((item, index) => {
             if (item.applicationName === this.applicationName) {
                 appIndex = index;
                 return;
             }
         })
-
         let window = document.querySelector(`.${this.applicationName}`);
         wrapper.removeChild(window)
 
-        openAppList.splice(appIndex, 1)
+        hasOpenAppList.splice(appIndex, 1)
     }
     // 拖拽(可拖拽区域，窗口)
     drag (dragAbleArea, window) {

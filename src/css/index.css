@@ -122,23 +122,31 @@
     grid-template-columns: repeat(14, 1fr);
     grid-template-rows: repeat(7, 1fr);
 
-    justify-items: center;
-    align-items: center;
+    /* justify-items: center;
+    align-items: center; */
 }
 
 #desktop > div {
     cursor: pointer;
 }
 
-#desktop .app-icon {
+#desktop .app-icon-wrapper {
     width: 3rem;
     height: 3rem;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
 }
 
-#desktop .app-icon img {
+#desktop .app-icon-wrapper .app-icon{
     width: 100%;
     height: 100%;
-    user-select: none;
+}
+
+#desktop .app-icon-wrapper .app-name {
 }
 
 /* 程序坞 */
@@ -186,11 +194,14 @@
 /* .application-list-btn {
 
 } */
+
 /* 列表 */
 #app {
     width: 100%;
     height: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     filter: drop-shadow(1rem);
     display: none;
