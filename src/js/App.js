@@ -1,3 +1,4 @@
+import { Window } from "./Window.js"
 
 export class App {
     constructor (name, icon) {
@@ -5,7 +6,9 @@ export class App {
         this.icon = icon;
     }
 
-    render (window, userInterface) {
-        console.log(this.name);
+    open (wrapper, openAppList, template) {
+        let window = new Window(this.name)
+        openAppList.push(window);
+        window.render(this.name, wrapper, openAppList, template)
     }
 }

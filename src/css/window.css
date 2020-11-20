@@ -3,8 +3,7 @@
     height: 600px; */
     background-color: #e8edeee7;
     backdrop-filter: blur(12px); 
-    border-bottom: 1px solid #b9bebf;
-
+    /* border-bottom: 1px solid #b9bebf; */
 
     position: absolute;
 
@@ -12,9 +11,6 @@
     left: 50%; */
     top: 50px;
     left: 50px;
-
-    /* margin-left: -300px;
-    margin-top: -150px; */
 
     border-radius: 0.5rem;
     overflow: hidden;
@@ -36,7 +32,14 @@
 
 }
 
-.window .tools-bar div {
+.app-name {
+    position: absolute;
+    left: 0;
+    margin: 0 16px;
+    user-select: none;
+}
+
+.window .tools-bar div.close {
     width: 16px;
     height: 16px;
     line-height: 16px;
@@ -56,11 +59,26 @@
 }
 
  */
- .window .tools-bar div.close {
+.window .tools-bar div.close {
     color: red;
     background-color: red;
+    user-select: none;
 }
-.window .tools-bar div:hover {
+
+.window .tools-bar div.close:hover {
     /* background-color: rgb(169, 177, 184); */
     color: rgb(29, 29, 29);
 }
+
+/* 窗口主要内容 */
+.window .template-wrapper {
+    height: 100%;
+    background: rgb(75, 146, 212);
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+.window-main {
+    height: 100%;
+    width: 100%;
+}
+/*  */

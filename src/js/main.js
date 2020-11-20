@@ -1,19 +1,22 @@
 import { Window } from "./Window.js"
-import { applications } from "../data/applications.js"
+import { desktopApp, dockApp } from "../data/applications.js"
 import { App } from "./App.js"
+
+import "./animation.js"
 
 (function (doc) {
     let main = doc.querySelector("#main");
     let fullScreenBtn = doc.querySelector("#full-screen-btn");
     let desktopArea = doc.querySelector("#desktop");
-
+    let dockArea = doc.querySelector(".dock");
     // 用来保存以打开的应用程序
     let openAppList = [];
 
     // 初始化
     ( function init () {
         fullScreen(fullScreenBtn, main);
-        loadingApplications (desktopArea, applications);
+        loadingApplications (desktopArea, desktopApp);
+        loadingApplications (dockArea, dockApp);
     })();
 
     // 全屏(触发全屏的按钮, 要全屏的元素)
@@ -46,13 +49,18 @@ import { App } from "./App.js"
         })
 
         if (hasOpenThisApp.length === 0) {
-            let newWindow = new Window(name);
-            openAppList.push(newWindow);
-            newWindow.open(openAppList);
+            // let newWindow = new Window(name);
+            // openAppList.push(newWindow);
+            // newWindow.open(openAppList);
+
+            let app = new App(name);
+            let template = document.createElement("div");
+            template.classList.add("template-wrapper");
+            template.innerHTML = `<div class="window-main">${name}</div>`;
+            app.open(main, openAppList, template);
         }
 
-        let app = new App(name);
-        app.render();
+
     }
     // 加载应用列表(加载的区域，应用列表)
     function loadingApplications (area, applications) {

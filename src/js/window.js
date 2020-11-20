@@ -1,13 +1,13 @@
 
 export class Window {
-    constructor(applicationName, width = 600, height = 400) {
+    constructor(appName, width = 600, height = 400) {
         this.wrapper = document.querySelector("#main");
-        this.applicationName = applicationName;
+        this.appName = appName;
         this.width = width;
         this.height = height;
     }
     // 渲染 window
-    render(wrapper, openAppList) {
+    render(name, wrapper, openAppList, template) {
         // 创建 window
         let window = document.createElement("div");
         window.classList.add("window");
@@ -18,27 +18,29 @@ export class Window {
         // 创建 window 的工具栏
         let toolsBar = document.createElement("div");
         toolsBar.classList.add("tools-bar");
+
+        // 创建应用名
+        let appName = document.createElement("div");
+        appName.classList.add("app-name");
+        appName.innerHTML = `${name}`;
         // 创建 window的工具栏的 关闭按钮
         let closeBtn = document.createElement("div");
         closeBtn.classList.add("close");
         closeBtn.innerText = "×";
         // 依次 插入元素
+        toolsBar.appendChild(appName);
         toolsBar.appendChild(closeBtn);
         window.appendChild(toolsBar);
+        window.appendChild(template);
         wrapper.appendChild(window);
 
         // 给关闭按钮绑定事件
         closeBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
             this.close(wrapper, openAppList);
         })
         // 给工具栏绑定拖拽事件
         toolsBar.addEventListener("click", this.drag(toolsBar, window))
         // 拖拽
-    }
-    // 打开 window
-    open(openAppList) {
-        this.render(this.wrapper, openAppList)
     }
     // 使用关闭按钮关闭 window
     close(wrapper, openAppList) {
@@ -102,11 +104,6 @@ export class Window {
             isOnDraging = false;
             document.body.removeEventListener("mousemove", mousemoveCallback)
         })
-
-        // dragAbleArea.addEventListener("mouseleave", (e) => {
-        //     document.removeEventListener("mousemove", mousemoveCallback)
-        //     isOnDraging = false;
-        // })
     }
     
 }
