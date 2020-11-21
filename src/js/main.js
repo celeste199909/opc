@@ -1,8 +1,7 @@
-import { Window } from "./Window.js"
 import { desktopApp, dockApp, appList } from "../applications/applications.js"
-import { App } from "./App.js"
 
 import "./animation/animation.js"
+import "./components/contextmenu.js"
 
 let main = document.querySelector("#main");
 let fullScreenBtn = document.querySelector("#full-screen-btn");
@@ -10,7 +9,10 @@ let desktopArea = document.querySelector("#desktop");
 let dockArea = document.querySelector(".dock");
 let startupListArea = document.querySelector(".app");
 
+// 已打开的应用的列表
 window.hasOpenAppList = [];
+// 右键菜单
+window.customContextMenu = null;
 
 // 初始化
 (function init() {
