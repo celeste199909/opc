@@ -1,7 +1,3 @@
 import "./contextmenu/index.js";
-import "./beforeenter/index.js"
-
-
-(function () {
-
-})();
+import "./beforeenter/index.js";
+import "./spotlight/index.js";

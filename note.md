@@ -8,6 +8,8 @@
 
 - 让文字或者图片不能再被选中 `user-select: none;`
 
-- hover 颜色 #327dfb
+- hover 颜色 `#327dfb`
 
 - 光标颜色 `caret-color:#fff;`
+
+- input 自动聚焦 `<input autofocus="autofocus"/>`

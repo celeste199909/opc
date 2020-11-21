@@ -12,17 +12,35 @@
     z-index: 200;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    font-size: 1rem;
 }
 
-.before-enter div {
+.before-enter div.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* 标题 */
+.before-enter .header {
+    position: absolute;
+    top: -5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.before-enter .header .name {
+    font-size: 5rem;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+}
 
+/* 输入框 */
 .before-enter div input {
     width: 15rem;
     height: 2rem;
@@ -34,7 +52,36 @@
 
     background-color: rgba(233, 233, 233, 0.705);
     caret-color:#fff;
-    margin: 1rem 0;
-
+    color: #fff;
+    margin:2rem 0 1.5rem;
     font-size: 14px;
+}
+
+.before-enter div span {
+    color: #c7c7c7;
+}
+
+/* 底部信息 */
+.before-enter .footer {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.before-enter .footer .description {
+    margin-bottom: 0.5rem;
+}
+
+
+.before-enter .footer a {
+    color: #fff;
+}
+
+.before-enter .footer a:hover {
+    
 }

@@ -57,6 +57,15 @@ function renderIcon(area, element) {
     })
     area.appendChild(iconEl);
 }
+// 回到开始页面
+// 屏保 10 秒自动锁屏
+// setTimeout( () => {
+//     enterBeforeEnter()
+// }, 1000)
+
+
+
+
 
 
 

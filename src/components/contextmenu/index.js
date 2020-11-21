@@ -30,29 +30,39 @@
     // 创建 contextMenu 元素
     let customContextMenuEl = document.createElement("div");
     customContextMenuEl.classList.add("custom-context-menu");
-    customContextMenuEl.innerHTML = createMenuTemplate();
     customContextMenuEl.style.left = clientX + "px";
     customContextMenuEl.style.top = clientY + "px";
 
-    let line = document.createElement("div");
-    line.classList.add("line")
+    
 
     // 创建 菜单的文件部分
     let filePart = document.createElement("ul");
     filePart.classList.add("file");
     filePart.innerHTML = `<li>新建文件夹</li>
                           <li>新建文件</li>`;
-    customContextMenuEl.appendChild(filePart);
-    customContextMenuEl.appendChild(line);
 
-    customContextMenuEl.appendChild(line);
+    customContextMenuEl.appendChild(filePart);
+    
+    // 线
+    let line1 = document.createElement("div");
+    line1.classList.add("line")
+    customContextMenuEl.appendChild(line1);
+
+
     // 创建 菜单的美化部分
     let beautifyPart = document.createElement("ul");
     beautifyPart.classList.add("beautify");
     beautifyPart.innerHTML = `<li>更改桌面背景</li>
                               <li>隐藏状态栏</li>
                               <li>一键整理桌面</li>`;
+
     customContextMenuEl.appendChild(beautifyPart);
+
+    // 线
+    let line2 = document.createElement("div");
+    line2.classList.add("line")
+    customContextMenuEl.appendChild(line2);
+
 
     // 创建 菜单的系统部分
     let systemePart = document.createElement("ul");
@@ -74,20 +84,6 @@
     customContextMenu = customContextMenuEl;
   }
 
-  function createMenuTemplate() {
-    return `
-      <ul calss="file">
-
-      </ul>
-      <ul class="system">
-
-      </ul>
-      <div class="line"></div>
-      <ul class="beautify">
-        
-      </ul>
-`
-  }
 })();
 
 
