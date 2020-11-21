@@ -1,8 +1,9 @@
 @import "./reset.css";
 @import "./window.css";
 
-@import "../applications/music/style.css";
-@import "../js/components/style.css";
+
+@import "../applications/applications.css";
+@import "../components/components.css";
 
 #main {
     width: 100vw;

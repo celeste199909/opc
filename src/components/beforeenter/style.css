@@ -1,0 +1,40 @@
+.before-enter {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-image: url(../../images/wallpapers/wallpaper3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color: rgba(54, 54, 54, 0.787); */
+    backdrop-filter: blur(20px);
+    z-index: 200;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.before-enter div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.before-enter div input {
+    width: 15rem;
+    height: 2rem;
+
+    border: none;
+    border-radius: 1rem;
+    text-indent: 1rem;
+    outline: none;
+
+    background-color: rgba(233, 233, 233, 0.705);
+    caret-color:#fff;
+    margin: 1rem 0;
+
+    font-size: 14px;
+}

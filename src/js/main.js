@@ -1,7 +1,7 @@
 import { desktopApp, dockApp, appList } from "../applications/applications.js"
 
-import "./animation/animation.js"
-import "./components/contextmenu.js"
+import "../animation/animation.js"
+import "../components/components.js"
 
 let main = document.querySelector("#main");
 let fullScreenBtn = document.querySelector("#full-screen-btn");
