@@ -25,7 +25,7 @@ function desktopFullScreen(triggerBtn, targetEl) {
         if (!document.fullscreenElement) {
             targetEl.requestFullscreen();
         } else {
-            doc.exitFullscreen();
+            document.exitFullscreen();
         }
     })
 }
