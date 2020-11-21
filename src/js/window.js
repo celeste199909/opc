@@ -4,7 +4,10 @@ export class Window {
         this.wrapper = document.querySelector("#main");
     }
 
-    renderOpen (options, hasOpenAppList) {
+    renderOpen (options) {
+        // 如果是在启动台打开的 需要把遮罩层去掉
+        let startupWrapper = document.querySelector("#app")
+        startupWrapper.classList.remove("active");
         // console.log(options);
         let { width, height, appName, appTemplate } = options;
         // 创建 window
@@ -39,33 +42,24 @@ export class Window {
 
         // 给关闭按钮绑定事件
         closeBtn.addEventListener("click", (e) => {
-            this.close(this.wrapper, hasOpenAppList);
+            this.closeApp();
         })
         // 给工具栏绑定拖拽事件
         toolsBar.addEventListener("click", this.drag(toolsBar, window))
-        // 拖拽
     }
 
     renderClose () {
-
+        // 在视图上移出 窗口
+        let theAppWindow = document.querySelector(`.${this.options.appName}`);
+        this.wrapper.removeChild(theAppWindow)
     }
     // 使用关闭按钮关闭 window
-    close(wrapper, hasOpenAppList) {
-
-        // 在视图上移出 窗口
-        let window = document.querySelector(`.${this.options.appName}`);
-        console.log(window);
-        wrapper.removeChild(window)
-        // // 在以打开应用列表中删除
-        let appIndex;
-        hasOpenAppList.forEach((item, index) => {
-            if (item.applicationName === this.options.appName) {
-                appIndex = index;
-                return;
-            }
+    closeApp() {
+        this.renderClose();
+        // 从已开应用列表中把应用删除
+        hasOpenAppList = hasOpenAppList.filter( (item) => {
+            return item.options.appName !== this.options.appName;
         })
-        console.log(this);
-        hasOpenAppList.splice(appIndex, 1)
     }
     // 拖拽(可拖拽区域，窗口)
     drag (dragAbleArea, window) {

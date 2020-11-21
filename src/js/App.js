@@ -7,13 +7,11 @@ export class App extends Window {
         this.options = options;
 
     }
-    openApp (hasOpenAppList) {
+    openApp (app) {
         // 调用的是 Window 的render方法
-        this.renderOpen(this.options, hasOpenAppList);
-    }
-
-    closeApp (hasOpenAppList) {
-        console.log("closeApp",hasOpenAppList);
+        hasOpenAppList.push(app);
+        this.renderOpen(this.options);
+        // console.log(hasOpenAppList);
     }
 
     iconClickEvent () {

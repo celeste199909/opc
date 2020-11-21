@@ -1,15 +1,31 @@
+/* 覆盖默认窗口样式 */
+.window.音乐 {
+    /* width: 900px;
+    height: 600px; */
+    background-color: rgba(0, 0, 0, 0.89); 
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid #1a191911;
+    position: absolute;
+    color: rgb(255, 255, 255);
+    /* top: 50%;
+    left: 50%; */
+    top: 50px;
+    left: 50px;
 
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+}
 /* 导航栏样式 */
-.window.音乐 .tools-bar{
+/* .window.音乐 .tools-bar{
     background-color: rgba(29, 29, 29, 0.89); 
     backdrop-filter: blur(24px);
-    /* color: black; */
-}
+} */
 
 .music {
     display: flex;
-    background-color: rgba(29, 29, 29, 0.89); 
-    backdrop-filter: blur(24px);
+    /* background-color: rgba(29, 29, 29, 0.89); 
+    backdrop-filter: blur(24px); */
     padding: 10px 15px;
 }
 /* 左 */
@@ -43,7 +59,7 @@
 /* 右 */
 
 .music .music-right {
-    /* padding: 10px 15px; */
+    padding: 10px 15px;
     flex: 8;
     position: relative;
     box-sizing: border-box;
@@ -56,6 +72,8 @@
     outline: none;
     text-indent: 1em;
     background-color: #333;
+    caret-color:#fff;
+    color: #fff;
 }
 .music .music-right .title {
     margin: 20px 2px;
@@ -94,6 +112,5 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgba(29, 29, 29, 0.89); 
-    backdrop-filter: blur(24px);
+    border-top: 2px solid rgb(133, 133, 133);
 }

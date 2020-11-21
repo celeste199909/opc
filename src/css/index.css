@@ -6,7 +6,7 @@
 #main {
     width: 100vw;
     height: 100vh;
-    background-image: url(../images/wallpapers/wallpaper2.jpg);
+    background-image: url(../images/wallpapers/wallpaper3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -19,10 +19,11 @@
     padding: 0 10px;
     height: 1.5rem;
     background-color: rgba(172, 172, 172, 0.336);
-    backdrop-filter: blur(5px);	
+    backdrop-filter: blur(10px);	
     -webkit-backdrop-filter: blur(5px);	
     color: #fff;
     font-size: 14px;
+    box-shadow: 0 1px 5px 5px rgba(20, 20, 20, 0.027);
 }
 /* 导航栏的左右项 */
 #nav > div {
@@ -191,21 +192,16 @@
     height: 100%;
     user-select: none;
 }
-/* 应用程序 */
-/* 按钮 */
-/* .application-list-btn {
 
-} */
-
-/* 列表 */
+/* startup app列表 */
 #app {
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    filter: drop-shadow(1rem);
+    background-color: rgba(0, 0, 0, 0.76);
+    backdrop-filter: blur(5px);
     display: none;
     z-index: 50;
 }
@@ -222,12 +218,22 @@
     overflow: hidden;
 }
 
-.app li {
+.app div {
     width: 4rem;
     height: 4rem;
     background-color: rgba(221, 221, 221, 0.582);
     border-radius: 50%;
     margin: 1rem;
-    color: bisque;
     cursor: pointer;
+    text-align: center;
+
+}
+
+.app div img{
+    width: 80%;
+    height: 80%;
+    padding: 10%;
+}
+.app div span {
+    /* margin-top: 10px; */
 }

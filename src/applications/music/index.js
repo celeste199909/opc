@@ -81,20 +81,15 @@ let appTemplate = `<div class="template-main music">
     </div>
 </div>`;
 
-// let style = `./applications/${appEnlishName}/style.css`;
-
-
 export let music = {
     name: appName,
     icon: icon,
     appTemplate: appTemplate,
 
-    start (hasOpenAppList) {
-      
-        // console.log(hasOpenAppList);
+    start () {
+
         let hasOpenThisApp = hasOpenAppList.filter( (item) => {
             return item.options.appName == appName;
-            // console.log(item);
         })
 
         if (hasOpenThisApp.length === 0) {
@@ -104,16 +99,12 @@ export let music = {
                 appName: appName,
                 appTemplate: appTemplate,
             });
-            // let styleEl = document.createElement("link");
-            // styleEl.href = style;
-            // document.head.appendChild(styleEl)
-            // console.log(app);
-            // app.setAttribute("style", "background-color: red")
-            hasOpenAppList.push(app)
-            app.openApp(hasOpenAppList)
-            // console.log("music start", hasOpenAppList);
+
+            app.openApp(app)
+            console.log("打开了音乐",hasOpenAppList);
+
         } else {
-            return;
+            console.log(`${appName}已经打开！`);
         }
 
     }

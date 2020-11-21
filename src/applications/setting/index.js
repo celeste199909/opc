@@ -10,26 +10,25 @@ export let setting = {
     icon: icon,
     appTemplate: appTemplate,
 
-    start (hasOpenAppList) {
+    start () {
       
-        // console.log(hasOpenAppList);
         let hasOpenThisApp = hasOpenAppList.filter( (item) => {
             return item.options.appName == appName;
-            // console.log(item);
         })
 
         if (hasOpenThisApp.length === 0) {
             let app = new App({
-                width: 800,
-                height: 500,
+                width: 900,
+                height: 600,
                 appName: appName,
-                appTemplate: appTemplate
+                appTemplate: appTemplate,
             });
-            hasOpenAppList.push(app)
-            app.openApp(hasOpenAppList)
-            // console.log("music start", hasOpenAppList);
+
+            app.openApp(app)
+            console.log("打开了设置", hasOpenAppList);
+
         } else {
-            return;
+            console.log(`${appName}已经打开！`);
         }
 
     }

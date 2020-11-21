@@ -3,34 +3,32 @@ import { App } from "../../js/App.js"
 
 let appName = "废纸篓";
 let icon = "../../images/applications/trash.png";
-let appTemplate = `<div>${appName}</div>`;
+let appTemplate = `<div class="template-main">${appName}</div>`;
 
 export let trash = {
     name: appName,
     icon: icon,
     appTemplate: appTemplate,
 
-    start (hasOpenAppList) {
+    start () {
       
-        // console.log(hasOpenAppList);
         let hasOpenThisApp = hasOpenAppList.filter( (item) => {
             return item.options.appName == appName;
-            // console.log(item);
         })
 
         if (hasOpenThisApp.length === 0) {
-
             let app = new App({
-                width: 600,
-                height: 400,
+                width: 900,
+                height: 600,
                 appName: appName,
-                appTemplate: appTemplate
+                appTemplate: appTemplate,
             });
-            hasOpenAppList.push(app)
-            app.openApp(hasOpenAppList)
-            // console.log("music start", hasOpenAppList);
+
+            app.openApp(app)
+            console.log("打开了废纸篓",hasOpenAppList);
+
         } else {
-            return;
+            console.log(`${appName}已经打开！`);
         }
 
     }

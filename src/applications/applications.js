@@ -7,14 +7,15 @@ import { trash } from "./trash/index.js";
 
 export let desktopApp = [
     music,
-    appstore,
     calculator,
     setting,
+    appstore,
+
 ]
 
 export let dockApp = [
-    startup,
     setting,
+    startup,
     trash
 ]
 
@@ -22,8 +23,6 @@ export let appList = [
     music,
     appstore,
     calculator,
-    setting,
-    startup,
     setting,
     trash
 ]
