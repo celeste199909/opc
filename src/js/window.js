@@ -104,7 +104,12 @@ export class Window {
 
         dragAbleArea.addEventListener("mouseup", (e) => {
             isOnDraging = false;
-            document.body.removeEventListener("mousemove", mousemoveCallback, true)
+            document.body.removeEventListener("mousemove", mousemoveCallback)
+        })
+
+        document.body.addEventListener("mouseleave", (e) => {
+            isOnDraging = false;
+            document.body.removeEventListener("mousemove", mousemoveCallback)
         })
     }
 
