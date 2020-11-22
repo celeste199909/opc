@@ -10,7 +10,6 @@ export let desktopApp = [
     calculator,
     setting,
     appstore,
-
 ]
 
 export let dockApp = [

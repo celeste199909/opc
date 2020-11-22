@@ -122,14 +122,15 @@
     /* background-color: rgba(180, 169, 153, 0.336); */
     width: 100%;
     height: calc(100% - 4.5rem);
-    padding: 1rem;
+    /* padding: 2rem; */
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-
-    /* justify-items: center;
+    /* display: grid; */
+    /* grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(7, 1fr); */
+/* 
+    justify-items: center;
     align-items: center; */
+    position: relative;
 }
 
 #desktop > div {
@@ -139,21 +140,25 @@
 #desktop .app-icon-wrapper {
     width: 3rem;
     height: 3rem;
-    user-select: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 12px;
+    user-select: none;
+    margin: 1.5rem;
+    position: absolute;
 }
 
 #desktop .app-icon-wrapper .app-icon{
     width: 100%;
     height: 100%;
-    transition: all ease-in 2s;
 }
 
 #desktop .app-icon-wrapper .app-name {
+    /* position: absolute; */
+    /* top:4rem; */
+
 }
 
 /* 程序坞 */
