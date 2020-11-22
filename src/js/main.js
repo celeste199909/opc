@@ -33,15 +33,43 @@ function desktopFullScreen(triggerBtn, targetEl) {
 }
 // 加载应用列表(加载的区域，应用列表)
 function loadingApplications(area, applications) {
-    applications.forEach(element => {
-        renderIcon(area, element);
+    applications.forEach((element,index) => {
+        renderIcon(area, element, index);
     });
 }
 // 渲染图标
-function renderIcon(area, element) {
+function renderIcon(area, element, index) {
     let { icon, name } = element;
     let iconEl = document.createElement("div");
     iconEl.classList.add("app-icon-wrapper");
+    iconEl.style.left = index * 90 + "px";
+    // 可拖拽
+    iconEl.setAttribute("draggable", "true");
+
+    iconEl.addEventListener("dragstart", handleDragStart);
+    iconEl.addEventListener("dragend", handleDragEnd);
+    area.addEventListener("dragover", handleDragOver);
+
+    // box
+    let offsetX = 0;
+    let offsetY = 0;
+    function handleDragStart(e) {
+        offsetX = e.offsetX;
+        offsetY = e.offsetY;
+    }
+    function handleDragEnd(e) {
+        e.preventDefault()
+        let left = e.clientX - offsetX - 16 - 30;
+        let top = e.clientY - offsetY - 16 - 5;
+
+        e.path[1].style.left = left + "px";
+        e.path[1].style.top = top + "px";
+    }
+    // target
+    function handleDragOver(e) {
+        e.preventDefault()
+    }
+    // 
     iconEl.innerHTML = 
     `
         <img class="app-icon" src="./images/applications/${icon}">
@@ -67,7 +95,43 @@ function renderIcon(area, element) {
 
 
 
+// let appIcon = document.createElement("img");
 
+//     appIcon.setAttribute("draggable", "true");
+//     appIcon.classList.add("app-icon")
+//     appIcon.setAttribute("src", `./images/applications/${icon}`);
+
+//     iconEl.appendChild(appIcon);
+
+//     let appName = document.createElement("span");
+//     appName.innerHTML = `${name}`
+//     iconEl.appendChild(appName);
+
+//     // 可拖拽
+
+//     appIcon.addEventListener("dragstart", handleDragStart);
+//     appIcon.addEventListener("dragend", handleDragEnd);
+//     area.addEventListener("dragover", handleDragOver);
+
+    // box
+    let offsetX = 0;
+    let offsetY = 0;
+    function handleDragStart(e) {
+        offsetX = e.offsetX;
+        offsetY = e.offsetY;
+        // console.log(e.DataTransfer);
+    }
+    function handleDragEnd(e) {
+        let left = e.clientX - offsetX - 7;
+        let top = e.clientY - offsetY - 7;
+
+        e.target.style.left = left + "px";
+        e.target.style.top = top + "px";
+    }
+    // target
+    function handleDragOver(e) {
+        e.preventDefault()
+    }
 
 
 
