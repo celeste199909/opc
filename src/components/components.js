@@ -1,3 +1,3 @@
 import "./contextmenu/index.js";
-import "./beforeenter/index.js";
+import "./lockscreen/index.js";
 import "./spotlight/index.js";

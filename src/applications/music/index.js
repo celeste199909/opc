@@ -88,7 +88,7 @@ export let music = {
 
     start () {
 
-        let hasOpenThisApp = hasOpenAppList.filter( (item) => {
+        let hasOpenThisApp = opc.hasOpenAppList.filter( (item) => {
             return item.options.appName == appName;
         })
 
@@ -99,10 +99,7 @@ export let music = {
                 appName: appName,
                 appTemplate: appTemplate,
             });
-
             app.openApp(app)
-            console.log("打开了音乐",hasOpenAppList);
-
         } else {
             console.log(`${appName}已经打开！`);
         }

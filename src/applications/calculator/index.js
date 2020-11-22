@@ -11,7 +11,7 @@ export let calculator = {
     appTemplate: appTemplate,
 
     start () {
-        let hasOpenThisApp = hasOpenAppList.filter( (item) => {
+        let hasOpenThisApp = opc.hasOpenAppList.filter( (item) => {
             return item.options.appName == appName;
         })
 
@@ -23,7 +23,6 @@ export let calculator = {
                 appTemplate: appTemplate
             });
             app.openApp(app)
-            console.log("打开了计算器", hasOpenAppList);
         } else {
             console.log(`${appName}已经打开！`);
         }

@@ -1,36 +1,40 @@
 
 // 鼠标点击动画
-document.addEventListener("click", (e) => {
-    let mian = document.querySelector("#main")
-    let canvas = document.createElement("canvas");
-    canvas.width = 100;
-    canvas.height = 100;
-    canvas.style.position = "absolute"
-    canvas.style.top = e.clientY - 50 + "px";
-    canvas.style.left = e.clientX - 50 + "px";
-    canvas.style.transition = "all ease-in-out 1s"
+(function () {
 
-    mian.appendChild(canvas)
+    document.addEventListener("click", (e) => {
+        let mian = document.querySelector("#main")
+        let canvas = document.createElement("canvas");
+        canvas.width = 100;
+        canvas.height = 100;
+        canvas.style.position = "absolute"
+        canvas.style.top = e.clientY - 50 + "px";
+        canvas.style.left = e.clientX - 50 + "px";
+        canvas.style.transition = "all ease-in-out 1s"
 
-    let ctx = canvas.getContext("2d")
-    ctx.save()
-    ctx.fillStyle = "#ffffff11";
-    // ctx.fillRect(0,0,100,100);
-    ctx.arc(50,50,10,0,Math.PI * 2)
-    ctx.fill()
-    ctx.restore()
+        mian.appendChild(canvas)
 
-    ctx.save()
-    ctx.fillStyle = "#ffffff33";
-    // ctx.fillRect(0,0,100,100);
-    ctx.arc(50,50,15,0,Math.PI * 2)
-    ctx.fill()
-    ctx.restore()
+        let ctx = canvas.getContext("2d")
+        ctx.save()
+        ctx.fillStyle = "#ffffff11";
+        // ctx.fillRect(0,0,100,100);
+        ctx.arc(50, 50, 10, 0, Math.PI * 2)
+        ctx.fill()
+        ctx.restore()
 
-    setTimeout(() => {
-        ctx.clearRect(0,0,100,100)
-        mian.removeChild(canvas)
-    },100)
+        ctx.save()
+        ctx.fillStyle = "#ffffff33";
+        // ctx.fillRect(0,0,100,100);
+        ctx.arc(50, 50, 15, 0, Math.PI * 2)
+        ctx.fill()
+        ctx.restore()
 
-})
+        setTimeout(() => {
+            ctx.clearRect(0, 0, 100, 100)
+            mian.removeChild(canvas)
+        }, 100)
+
+    })
+})();
+
 

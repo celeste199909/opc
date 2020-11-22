@@ -5,20 +5,21 @@ import { calculator } from "./calculator/index.js";
 import { setting } from "./setting/index.js";
 import { trash } from "./trash/index.js";
 
-export let desktopApp = [
+
+export let desktopApps = [
     music,
     calculator,
     setting,
     appstore,
 ]
 
-export let dockApp = [
+export let dockApps = [
     setting,
     startup,
     trash
 ]
 
-export let appList = [
+export let launchpadApps = [
     music,
     appstore,
     calculator,

@@ -1,21 +1,3 @@
-@import "./reset.css";
-@import "./window.css";
-
-
-@import "../applications/applications.css";
-@import "../components/components.css";
-
-#main {
-    width: 100vw;
-    height: 100vh;
-    background-image: url(../images/wallpapers/wallpaper3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    user-select: none;
-}
-
 /* 导航栏 */
 #nav {
     width: 100vw;
@@ -27,6 +9,7 @@
     color: #fff;
     font-size: 14px;
     box-shadow: 0 1px 5px 5px rgba(20, 20, 20, 0.027);
+    z-index: 200;
 }
 /* 导航栏的左右项 */
 #nav > div {
@@ -119,22 +102,10 @@
 
 /* 桌面 */
 #desktop {
-    /* background-color: rgba(180, 169, 153, 0.336); */
     width: 100%;
     height: calc(100% - 4.5rem);
-    /* padding: 2rem; */
     box-sizing: border-box;
-    /* display: grid; */
-    /* grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(7, 1fr); */
-/* 
-    justify-items: center;
-    align-items: center; */
     position: relative;
-}
-
-#desktop > div {
-    cursor: pointer;
 }
 
 #desktop .app-icon-wrapper {
@@ -154,27 +125,23 @@
     width: 100%;
     height: 100%;
 }
-
 #desktop .app-icon-wrapper .app-name {
-    /* position: absolute; */
-    /* top:4rem; */
-
+    text-shadow: #000 0 0 1px;
 }
 
-/* 程序坞 */
-#dock {
+/* 程序坞 dock */
+#dock-wrapper {
     width: 100%;
     height: 3rem;
     position: fixed;
     bottom: 0;
     z-index: 100;
-    /* background-color: rgba(0, 0, 0, 0.4); */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.dock {
+#dock {
     height: 100%;
     background-color: rgba(238, 238, 238, 0.349);
     backdrop-filter: blur(5px);	
@@ -186,24 +153,27 @@
     margin-bottom: 10px;
 }
 
-#dock .dock div {
+#dock .app-icon-wrapper {
     box-sizing: border-box;
     margin: 0 0.5rem;
-    /* font-size: 2.8rem; */
     width: 2.5rem;
     height: 2.5rem;
     cursor: pointer;
     text-align: center;
 }
 
-#dock .dock div img {
+#dock .app-icon-wrapper img {
     width: 100%;
     height: 100%;
     user-select: none;
 }
 
-/* startup app列表 */
-#app {
+#dock .app-icon-wrapper .app-name {
+    display: none;
+}
+
+/* launchpad app列表 */
+#launchpad {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -215,11 +185,11 @@
     z-index: 50;
 }
 
-#app.active {
+#launchpad.active {
     display: block;
 }
 
-.app {
+.launch-pad-apps {
     padding: 5% 10%;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -227,7 +197,7 @@
     overflow: hidden;
 }
 
-.app div {
+.launch-pad-apps div {
     width: 4rem;
     height: 4rem;
     background-color: rgba(221, 221, 221, 0.582);
@@ -238,11 +208,8 @@
 
 }
 
-.app div img{
+.launch-pad-apps div img{
     width: 80%;
     height: 80%;
     padding: 10%;
-}
-.app div span {
-    /* margin-top: 10px; */
 }

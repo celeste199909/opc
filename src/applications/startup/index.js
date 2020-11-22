@@ -10,7 +10,7 @@ export let startup = {
     icon: icon,
     start() {
         // 应用程序列表 打开/关闭
-        let app = document.querySelector("#app");
+        let app = document.querySelector("#launchpad");
         // console.log(app.classList[0] === "active");
         if (app.classList[0] === "active") {
             app.classList.remove("active");

@@ -1,5 +1,8 @@
 import { Window } from "./Window.js"
 
+// let { mainEl, desktopEl, dockEl, launchpadAppsEl,
+//     hasOpenAppList, customContextMenu} = opc;
+
 export class App extends Window {
 
     constructor (options) {
@@ -7,11 +10,12 @@ export class App extends Window {
         this.options = options;
 
     }
+
     openApp (app) {
         // 调用的是 Window 的render方法
-        hasOpenAppList.push(app);
+        opc.hasOpenAppList.push(app);
+        console.log(opc.hasOpenAppList);
         this.renderOpen(this.options);
-        // console.log(hasOpenAppList);
     }
 
     iconClickEvent () {

@@ -17,15 +17,8 @@
 
 }
 /* 导航栏样式 */
-/* .window.音乐 .tools-bar{
-    background-color: rgba(29, 29, 29, 0.89); 
-    backdrop-filter: blur(24px);
-} */
-
 .music {
     display: flex;
-    /* background-color: rgba(29, 29, 29, 0.89); 
-    backdrop-filter: blur(24px); */
     padding: 10px 15px;
 }
 /* 左 */

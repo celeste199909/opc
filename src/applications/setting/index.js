@@ -12,7 +12,7 @@ export let setting = {
 
     start () {
       
-        let hasOpenThisApp = hasOpenAppList.filter( (item) => {
+        let hasOpenThisApp = opc.hasOpenAppList.filter( (item) => {
             return item.options.appName == appName;
         })
 
@@ -25,8 +25,6 @@ export let setting = {
             });
 
             app.openApp(app)
-            console.log("打开了设置", hasOpenAppList);
-
         } else {
             console.log(`${appName}已经打开！`);
         }

@@ -1,4 +1,4 @@
-.before-enter {
+.lock-screen {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -7,7 +7,6 @@
     background-image: url(../../images/wallpapers/wallpaper3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-color: rgba(54, 54, 54, 0.787); */
     backdrop-filter: blur(20px);
     z-index: 200;
 
@@ -19,15 +18,17 @@
     font-size: 1rem;
 }
 
-.before-enter div.wrapper {
+.lock-screen div.wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     position: relative;
 }
+
 /* 标题 */
-.before-enter .header {
+.lock-screen .header {
     position: absolute;
     top: -5rem;
     display: flex;
@@ -35,13 +36,13 @@
     justify-content: center;
     align-items: center;
 }
-.before-enter .header .name {
+.lock-screen .header .name {
     font-size: 5rem;
     text-shadow: 0 0 5px rgb(0, 0, 0);
 }
 
 /* 输入框 */
-.before-enter div input {
+.lock-screen div input {
     width: 15rem;
     height: 2rem;
 
@@ -57,12 +58,12 @@
     font-size: 14px;
 }
 
-.before-enter div span {
+.lock-screen div span {
     color: #e6e6e6;
 }
 
 /* 底部信息 */
-.before-enter .footer {
+.lock-screen .footer {
     position: absolute;
     bottom: 2rem;
     font-size: 0.8rem;
@@ -73,15 +74,10 @@
     align-items: center;
 }
 
-.before-enter .footer .description {
+.lock-screen .footer .description {
     margin-bottom: 0.5rem;
 }
 
-
-.before-enter .footer a {
+.lock-screen .footer a {
     color: #fff;
-}
-
-.before-enter .footer a:hover {
-    
 }

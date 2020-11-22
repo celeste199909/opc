@@ -5,7 +5,6 @@ let appName = "应用商店";
 let icon = "../../images/applications/appstore.png";
 let appTemplate = `<div class="template-main">应用商店</div>`;
 
-
 export let appstore = {
     name: appName,
     icon: icon,
@@ -13,7 +12,7 @@ export let appstore = {
 
     start () {
       
-        let hasOpenThisApp = hasOpenAppList.filter( (item) => {
+        let hasOpenThisApp = opc.hasOpenAppList.filter( (item) => {
             return item.options.appName == appName;
         })
 
@@ -24,10 +23,7 @@ export let appstore = {
                 appName: appName,
                 appTemplate: appTemplate,
             });
-
             app.openApp(app)
-            console.log("打开了应用商店",hasOpenAppList);
-
         } else {
             console.log(`${appName}已经打开！`);
         }

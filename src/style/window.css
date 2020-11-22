@@ -1,13 +1,9 @@
 .window {
-    /* width: 900px;
-    height: 600px; */
     background-color: #fffffff6;
     backdrop-filter: blur(12px); 
     border-bottom: 1px solid #1a191911;
     position: absolute;
     color: #000;
-    /* top: 50%;
-    left: 50%; */
     top: 50px;
     left: 50px;
 
@@ -25,15 +21,13 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
-    /* background-color: #ffffff94; */
 }
 
 .template-main {
     padding: 10px 15px;
 }
 
-.app-name {
+.window .tools-bar .app-name {
     position: absolute;
     left: 0;
     margin: 0 16px;
@@ -49,17 +43,7 @@
     border-radius: 50%;
     margin: 0 16px;
 }
-/* .window .tools-bar div:first-child {
-    color: orange;
-    background-color: orange;
-}
 
-.window .tools-bar div:nth-child(2) {
-    color: green;
-    background-color: green;
-}
-
- */
 .window .tools-bar div.close {
     color: red;
     background-color: red;
@@ -67,14 +51,12 @@
 }
 
 .window .tools-bar div.close:hover {
-    /* background-color: rgb(169, 177, 184); */
     color: rgba(29, 29, 29, 0.836);
 }
 
 /* 窗口主要内容 */
 .window .template-wrapper {
     height: 100%;
-    /* background-color: rgba(255, 255, 255, 0.952); */
     padding-top: 40px;
     box-sizing: border-box;
 }
@@ -82,4 +64,3 @@
     height: 100%;
     width: 100%;
 }
-/*  */
