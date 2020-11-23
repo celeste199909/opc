@@ -44,7 +44,7 @@
 #launchpad.active {
     display: block;
 }
-
+/* 应用列表面板 */
 .launch-pad-apps {
     padding: 5% 10%;
     display: grid;
@@ -53,7 +53,14 @@
     overflow: hidden;
 }
 
-.launch-pad-apps div {
+.app-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.launch-pad-apps .app-icon-wrapper img.app-icon {
     width: 4rem;
     height: 4rem;
     background-color: rgba(221, 221, 221, 0.582);
@@ -61,11 +68,5 @@
     margin: 1rem;
     cursor: pointer;
     text-align: center;
-
-}
-
-.launch-pad-apps div img{
-    width: 80%;
-    height: 80%;
     padding: 10%;
 }
