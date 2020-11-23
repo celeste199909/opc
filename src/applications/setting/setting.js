@@ -3,7 +3,17 @@ import { App } from "../../js/App.js"
 
 let appName = "设置";
 let icon = "../../images/applications/setting.png";
-let appTemplate = `<div class="template-main">设置</div>`;
+let appTemplate = `
+    <div class="template-main">
+        <input placeholder="搜索" class="search"></input>
+        <div class="setting-list">
+            <div class="setting">账户</div>
+            <div class="setting">外观</div>
+            <div class="setting">语言</div>
+            <div class="setting">关于</div>
+            <div class="setting">帮助</div>
+        </div>
+    </div>`;
 
 export let setting = {
     name: appName,

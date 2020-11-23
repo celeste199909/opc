@@ -46,7 +46,7 @@
 }
 
 .nav .menu {
-    width: 180px;
+    min-width: 100px;
     color: #000;
     position: absolute;
     left: 0;
@@ -57,20 +57,20 @@
 }
 
 .nav .menu li:first-child {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .nav .menu li:last-child {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 /* 菜单 ul */
 .menu li {
-    padding: 2px 10px;
+    padding: 0 10px;
 }
 
 .menu li:hover {
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: #327dfb;
     color: #fff;
 }

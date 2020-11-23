@@ -97,6 +97,7 @@ export let music = {
                 width: 900,
                 height: 600,
                 appName: appName,
+                backgroundColor: "#000000cc",
                 appTemplate: appTemplate,
             });
             app.openApp(app)

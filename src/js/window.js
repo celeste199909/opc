@@ -8,7 +8,7 @@ export class Window {
     renderOpen(options) {
         // 如果是在启动台打开的 需要把遮罩层去掉
         launchpadEl.classList.remove("active");
-        let { width, height, appName, appTemplate } = options;
+        let { width, height, appName, backgroundColor, appTemplate } = options;
         // 创建 window 元素
         let window = opc.createNode("div", `window ${appName}`)
         // 宽高
@@ -20,18 +20,31 @@ export class Window {
         // 创建应用名
         let appNameEl = opc.createNode("div", "app-name", `${appName}`)
         // 创建 window的工具栏的 关闭按钮
-        let closeBtn = opc.createNode("div", "close", "×")
+        let minizeBtn = opc.createNode("div", "minimize btn", "﹣")
+        let maximizeBtn = opc.createNode("div", "maximize btn", "☉")
+        let closeBtn = opc.createNode("div", "close btn", "×")
 
-        // 创建 App 内容
+        // 创建 App 内容ΘΘ
         let appTemplateWrapper = opc.createNode("div", "template-wrapper")
         appTemplateWrapper.innerHTML = appTemplate;
+        // 背景颜色
+        backgroundColor = backgroundColor ? backgroundColor : "#ffffffee";
+        appTemplateWrapper.style.backgroundColor = backgroundColor;
 
         // 依次插入元素
-        opc.inTurnInsertNode(toolsBar, appNameEl, closeBtn)
+        opc.inTurnInsertNode(toolsBar, appNameEl, minizeBtn, maximizeBtn, closeBtn)
         opc.inTurnInsertNode(window, toolsBar, appTemplateWrapper)
         mainEl.appendChild(window);
 
-        // 给关闭按钮绑定事件
+        // 给按钮绑定事件
+        minizeBtn.addEventListener("mousedown", (e) => {
+            console.log("minizeBtn");
+        })
+
+        maximizeBtn.addEventListener("mousedown", (e) => {
+            console.log("maximizeBtn");
+        })
+
         closeBtn.addEventListener("mousedown", (e) => {
             this.closeApp();
         })
@@ -39,7 +52,6 @@ export class Window {
         // 给工具栏绑定拖拽事件
         toolsBar.addEventListener("mousedown", this.drag(toolsBar, window))
     }
-
     renderClose() {
         // 在视图上移出 窗口
         let theAppWindow = document.querySelector(`.${this.options.appName}`);

@@ -1,0 +1,50 @@
+.window.设置 .template-wrapper {
+}
+
+.window.设置 .template-wrapper .template-main {
+    position: relative;
+}
+
+.window.设置 .template-wrapper .search {
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    top: 15px;
+    left: calc(50% - 100px);
+    background-color: rgb(219, 219, 219);
+    text-indent: 1rem;
+    z-index: 3;
+}
+
+.window.设置 .template-wrapper .setting-list {
+    display: grid;
+    grid-template-columns: 10rem 10rem 10rem;
+    grid-template-rows: 5rem 5rem 5rem;
+
+    justify-content: space-around;
+    align-content: center;
+
+    grid-row-gap: 3rem;
+    /* grid-column-gap: 20px; */
+
+    padding: 3rem;
+}
+
+.window.设置 .template-wrapper .setting-list .setting {
+    width: 10rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+
+    text-align: center;
+    line-height: 5rem;
+
+    background-color: rgba(233, 233, 233, 0.815);
+
+}
+
+.window.设置 .template-wrapper .setting-list .setting:hover {
+    background-color: rgba(177, 177, 177, 0.815);
+}

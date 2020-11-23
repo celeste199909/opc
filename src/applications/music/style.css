@@ -2,7 +2,7 @@
 .window.音乐 {
     /* width: 900px;
     height: 600px; */
-    background-color: rgba(0, 0, 0, 0.89); 
+    /* background-color: rgba(0, 0, 0, 0.89);  */
     backdrop-filter: blur(24px);
     border-bottom: 1px solid #1a191911;
     position: absolute;
@@ -14,6 +14,9 @@
 
     border-radius: 0.5rem;
     overflow: hidden;
+
+}
+.window .template-wrapper {
 
 }
 /* 导航栏样式 */

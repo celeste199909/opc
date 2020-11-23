@@ -1,23 +1,29 @@
 let nav = opc.createNode("nav", "nav")
 let navLeft = opc.createNode("div", "left")
 
-let navItemSettingTemplate = `
-    <div class="item-name">设置</div>
+// opc
+let navItemOpcTemplate = `
+    <div class="item-name">系统</div>
     <ul class="menu">
-        <li>关于本机</li>
-        <li>系统偏好设置</li>
-        <li>App Store</li>
-        <li>睡眠</li>
-        <li>关机</li>
-        <li>退出登录</li>
+        <li>偏好设置</li>
+        <li>锁屏</li>
     </ul>`;
+let navItemOpc = opc.createNode("div", "nav-item")
+navItemOpc.innerHTML = navItemOpcTemplate;
 
+navLeft.appendChild(navItemOpc)
+// 帮助
+let navItemHelpTemplate = `<div class="item-name">帮助</div>`;
+let navItemHelp = opc.createNode("div", "nav-item")
+navItemHelp.innerHTML = navItemHelpTemplate;
+navLeft.appendChild(navItemHelp)
+// 关于
+let navItemAboutTemplate = `<div class="item-name">关于</div>`;
+let navItemAbout = opc.createNode("div", "nav-item")
+navItemAbout.innerHTML = navItemAboutTemplate;
+navLeft.appendChild(navItemAbout)
 
-let navItemSetting = opc.createNode("div", "nav-item")
-navItemSetting.innerHTML = navItemSettingTemplate;
-
-navLeft.appendChild(navItemSetting)
-
+// 插入左侧导航
 nav.appendChild(navLeft)
 
 opc.mainEl.appendChild(nav)
