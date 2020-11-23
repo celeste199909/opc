@@ -22,7 +22,11 @@ let opc = {
     // 创建节点 （tagName, className, innerText, mousedownEvent）
     createNode,
     // 依次 插入节点 (wrapperEl, ...items) (容器节点， 依次要插入的节点)
-    inTurnInsertNode
+    inTurnInsertNode,
+    // fakerFullScreen
+    fakerFullScreen,
+
+    setting: {}
 }
 
 window.opc = opc
@@ -33,6 +37,18 @@ function fullScreen (targetEl) {
         alert("您的环境不支持全屏！Your environment does not support full screen !")
     }
     targetEl.requestFullscreen();
+}
+
+// 元素全屏 fake
+function fakerFullScreen (targetEl) {
+    targetEl.style.width = "100vw";
+    targetEl.style.height = "100vh";
+    targetEl.style.position = "fixed";
+    targetEl.style.top = 0;
+    targetEl.style.left = 0;
+    targetEl.style.zIndex = "200";
+    opc.dragagbleArea.removeEventListener("mousedown", opc.handleMousedown)
+    document.body.removeEventListener("mousemove", opc.handleMousemove)
 }
 
 // 退出全屏

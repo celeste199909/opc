@@ -8,7 +8,6 @@ import { trash } from "./trash/index.js";
 
 export let desktopApps = [
     music,
-    calculator,
     setting,
     appstore,
 ]
@@ -22,7 +21,6 @@ export let dockApps = [
 export let launchpadApps = [
     music,
     appstore,
-    calculator,
     setting,
     trash
 ]

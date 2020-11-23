@@ -29,10 +29,6 @@
     z-index: 1;
 }
 
-.template-main {
-    /* padding: 0 25px; */
-}
-
 .window .tools-bar .app-name {
     position: absolute;
     left: 0;
@@ -50,15 +46,17 @@
     margin: 0 5px;
     z-index: 2;
 }
+
 /* 最大化按钮 */
-.minimize {
-    color: orange;
-    background-color: orange;
+.minimize  {
+    color: rgb(22, 155, 243);
+    background-color: rgb(22, 155, 243);
 }
 /* 最大化按钮 */
-.maximize {
-    color: green;
-    background-color: green;
+.maximize{
+    color: orange;
+    background-color: orange;
+    font-weight: 600;
 }
 /* 关闭按钮 */
 .window .tools-bar div.close {
@@ -82,5 +80,5 @@
     height: 100%;
     width: 100%;
     padding-top: 60px;
-    padding: 60px 25px 0 25px;
+    padding: 60px 25px 25px 25px;
 }

@@ -2,7 +2,7 @@ import { Window } from "../../js/Window.js"
 import { App } from "../../js/App.js"
 
 let appName = "启动台";
-let icon = "../../images/applications/startup.png";
+let icon = "../../images/applications/launch.png";
 let appTemplate = `<div class="template-main">启动</div>`;
 
 export let startup = {
