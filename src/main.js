@@ -9,6 +9,8 @@ import "./components/components.js";
 
 let { mainEl, desktopEl, dockEl, launchpadAppsEl} = opc;
 
+console.log(dockEl);
+
 // 初始化
 (function init() {
     // 如果存在锁屏组件，则在一开始时进入锁屏页面；

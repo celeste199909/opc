@@ -1,3 +1,5 @@
-@import "./contextmenu/style.css";
-@import "./lockscreen/style.css";
-@import "./spotlight/style.css";
+@import "./contextmenu/contextmenu.css";
+@import "./lockscreen/lockscreen.css";
+@import "./spotlight/spotlight.css";
+@import "./navigation/navigation.css";
+@import "./dock/dock.css";

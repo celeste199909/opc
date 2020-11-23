@@ -1,3 +1,5 @@
-import "./contextmenu/index.js";
-import "./lockscreen/index.js";
-import "./spotlight/index.js";
+import "./contextmenu/contextmenu.js";
+// import "./lockscreen/lockscreen.js";
+import "./spotlight/spotlight.js";
+import "./navigation/navigation.js";
+import "./dock/dock.js";

@@ -1,0 +1,45 @@
+/* 程序坞 dock */
+.dock-wrapper {
+    /* width: 100vw; */
+    height: 3rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dock {
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.349);
+    backdrop-filter: blur(5px);	
+    border-radius: 1rem;
+    border: 1px solid #b3b3b352;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.dock .app-icon-wrapper {
+    box-sizing: border-box;
+    margin: 0 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dock .app-icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.dock .app-icon-wrapper .app-name {
+    display: none;
+}

@@ -1,10 +1,10 @@
 
 let opc = {
     mainEl: document.querySelector("#main"),
-    navEl: document.querySelector("#nav"),
+    navEl: document.querySelector(".nav"),
     desktopEl: document.querySelector("#desktop"),
-    dockWrapperEl: document.querySelector("#dock-wrapper"),
-    dockEl: document.querySelector("#dock"),
+    dockWrapperEl: document.querySelector(".dock-wrapper"),
+    // dockEl: document.querySelector(".dock"),
     launchpadEl: document.querySelector("#launchpad"),
     launchpadAppsEl: document.querySelector(".launch-pad-apps"),
 
