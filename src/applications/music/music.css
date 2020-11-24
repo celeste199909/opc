@@ -1,8 +1,7 @@
 /* 覆盖默认窗口样式 */
 .window.音乐 {
-    /* width: 900px;
-    height: 600px; */
-    /* background-color: rgba(0, 0, 0, 0.89);  */
+    width: 400px;
+    height: 400px;
     backdrop-filter: blur(24px);
     border-bottom: 1px solid #1a191911;
     position: absolute;

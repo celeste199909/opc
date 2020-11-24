@@ -1,2 +1,4 @@
-@import "./music/style.css";
+@import "./music/music.css";
 @import "./setting/setting.css";
+@import "./appstore/appstore.css";
+@import "./trash/trash.css";

@@ -2,7 +2,6 @@ import { Window } from "../../js/Window.js"
 import { App } from "../../js/App.js"
 
 let appName = "音乐";
-let appEnlishName = "music";
 let icon = "../../images/applications/music.png";
 
 let appTemplate = `<div class="template-main music">
@@ -94,11 +93,7 @@ export let music = {
 
         if (hasOpenThisApp.length === 0) {
             let app = new App({
-                width: 900,
-                height: 600,
                 appName: appName,
-                backgroundColor: "#000000cc",
-                appTemplate: appTemplate,
             });
             app.openApp(app)
         } else {

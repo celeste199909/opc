@@ -31,8 +31,10 @@ function loadingApplications(area, applications) {
 function renderIcon(area, element, index) {
     let { icon, name } = element;
     let iconEl = document.createElement("div");
-    iconEl.classList.add("app-icon-wrapper");
+    iconEl.classList.add("icon-wrapper");
     iconEl.style.left = index * 90 + "px";
+
+
     // 可拖拽
 
     iconEl.addEventListener("dragstart", handleDragStart);

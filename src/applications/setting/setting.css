@@ -1,27 +1,27 @@
-.window.设置 .template-wrapper {
-    background-color: #327dfb;
+.window.设置 {
+    width: 800px;
+    height: 500px;
+    background-color: #8ca1dd !important;
 }
 
-.window.设置 .template-wrapper .template-main {
-    position: relative;
-}
 /* 工具 返回 向前 */
-.window.设置 .template-wrapper .tools {
+.设置 .tools {
     position: absolute;
     top: 17.5px;
     left: 120px;
 }
 
-.window.设置 .template-wrapper .tools img {
+.设置 .tools img {
     width: 25px;
     height: 25px;
 }
-.window.设置 .template-wrapper .tools img:first-child {
+
+.设置  .tools img:first-child {
     margin-right: 10px;
 }
 
 /* 搜索框 */
-.window.设置 .template-wrapper .search {
+.设置 .search {
     position: absolute;
     width: 200px;
     height: 30px;
@@ -33,34 +33,29 @@
     background-color: rgb(235, 235, 235);
     text-indent: 1rem;
     z-index: 3;
-
 }
-.window.设置 .template-wrapper .search:focus {
+
+.设置 .search:focus {
     border: 2px solid #327dfb;
 }
 
-.window.设置 .template-wrapper .setting-list {
+.设置 .setting-list {
     display: grid;
     grid-template-columns: 10rem 10rem 10rem;
     grid-template-rows: 5rem 5rem 5rem;
-
     justify-content: space-around;
     align-content: center;
-
     grid-row-gap: 3rem;
-    /* grid-column-gap: 20px; */
-
     padding: 3rem;
 }
 
-.window.设置 .setting-list .setting-item {
+.设置 .setting-list .setting-item {
     width: 10rem;
     height: 6.18rem;
     border-radius: 0.5rem;
 
     border: 1px solid rgba(230, 230, 230, 0.815);
     background-color: rgba(230, 230, 230, 0.815);
-    /* box-shadow: -2px -2px 2px -2px #327dfb; */
     border: 1px solid rgba(255, 255, 255, 0);
 
     display: flex;
@@ -69,13 +64,11 @@
     justify-content: center;
 }
 
-.window.设置 .setting-item img.icon {
+.设置 .setting-item img.icon {
     width: 3.2rem;
     height: 3.2rem;
 }
 
-.window.设置 .template-wrapper .setting-list .setting-item:hover {
+.设置 .setting-list .setting-item:hover {
     border: 1px solid #327dfb;
-    /* background-color: #327dfb; */
-    /* color: #fff; */
 }

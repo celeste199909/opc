@@ -1,5 +1,5 @@
 .window {
-    /* background-color: #fffffff6; */
+    background-color: #fffffff6;
     /* backdrop-filter: blur(12px);  */
     border-bottom: 1px solid #1a191911;
     position: absolute;
@@ -69,14 +69,7 @@
 }
 
 /* 窗口主要内容 */
-.window .template-wrapper {
-    height: 100%;
-    /* padding-top: 40px; */
-    box-sizing: border-box;
-}
-
-.template-main {
-    /* height: calc(100% - 60px); */
+.main {
     height: 100%;
     width: 100%;
     padding-top: 60px;

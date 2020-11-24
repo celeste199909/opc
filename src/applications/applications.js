@@ -1,9 +1,9 @@
-import { startup } from "./startup/index.js"
-import { music } from "./music/index.js";
-import { appstore } from "./appstore/index.js";
-import { calculator } from "./calculator/index.js";
+import { launch } from "./launch/launch.js"
+
+import { music } from "./music/music.js";
+import { appstore } from "./appstore/appstore.js";
 import { setting } from "./setting/setting.js";
-import { trash } from "./trash/index.js";
+import { trash } from "./trash/trash.js";
 
 
 export let desktopApps = [
@@ -14,7 +14,7 @@ export let desktopApps = [
 
 export let dockApps = [
     setting,
-    startup,
+    launch,
     trash
 ]
 

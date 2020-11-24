@@ -5,7 +5,7 @@ let appName = "启动台";
 let icon = "../../images/applications/launch.png";
 let appTemplate = `<div class="template-main">启动</div>`;
 
-export let startup = {
+export let launch = {
     name: appName,
     icon: icon,
     start() {

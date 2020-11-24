@@ -1,27 +1,24 @@
 import { Window } from "../../js/Window.js"
 import { App } from "../../js/App.js"
 
-let appName = "计算器";
-let icon = "../../images/applications/calculator.png";
-let appTemplate = `<div class="template-main">计算器</div>`;
+let appName = "废纸篓";
+let icon = "../../images/applications/trash.png";
 
-export let calculator = {
+export let trash = {
     name: appName,
     icon: icon,
-    appTemplate: appTemplate,
 
     start () {
+      
         let hasOpenThisApp = opc.hasOpenAppList.filter( (item) => {
             return item.options.appName == appName;
         })
 
         if (hasOpenThisApp.length === 0) {
             let app = new App({
-                width: 400,
-                height: 600,
                 appName: appName,
-                appTemplate: appTemplate
             });
+
             app.openApp(app)
         } else {
             console.log(`${appName}已经打开！`);

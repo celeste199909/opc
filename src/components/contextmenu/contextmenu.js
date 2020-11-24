@@ -1,19 +1,23 @@
 let { customContextMenu } = opc;
-(function () {
-  // 自定义 右键菜单
+
+let desktopdArea = document.querySelector("#desktop");
+
+;(function () {
   document.addEventListener("contextmenu", (e) => {
     // 阻止默认事件
     e.preventDefault()
+  })
+  // 自定义 右键菜单
+  desktopdArea.addEventListener("contextmenu", (e) => {
     // 创建自定义菜单
     createCustomContextMenu(e)
   })
 
   // 鼠标点击时删除菜单
-  document.addEventListener("mousedown", (e) => {
-    let mainArea = document.querySelector("#main")
+  desktopdArea.addEventListener("mousedown", (e) => {
 
     if (customContextMenu) {
-      mainArea.removeChild(customContextMenu)
+      desktopdArea.removeChild(customContextMenu)
       customContextMenu = null
     }
   })
@@ -22,11 +26,10 @@ let { customContextMenu } = opc;
 // 自定义右键菜单
 function createCustomContextMenu(e) {
 
-  let mainArea = document.querySelector("#main")
   // 鼠标位置
   let { clientX, clientY } = e
   if (customContextMenu) {
-    mainArea.removeChild(customContextMenu)
+    desktopdArea.removeChild(customContextMenu)
     customContextMenu = null
     return
   }
@@ -49,7 +52,7 @@ function createCustomContextMenu(e) {
 
   customContextMenuEl.appendChild(ul)
   // 插入菜单元素
-  mainArea.appendChild(customContextMenuEl)
+  desktopdArea.appendChild(customContextMenuEl)
 
   customContextMenu = customContextMenuEl
 }
