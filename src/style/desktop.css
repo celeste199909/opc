@@ -10,10 +10,10 @@
 #desktop .icon-wrapper {
     width: 3rem;
     height: 3rem;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     font-size: 12px;
     user-select: none;
     margin: 1.5rem;
@@ -25,6 +25,11 @@
     height: 100%;
 }
 #desktop .icon-wrapper .app-name {
+    width: inherit;
+    text-align: center;
+    position: absolute;
+    display: block;
+    top: 48px;
     text-shadow: #000 0 0 1px;
 }
 

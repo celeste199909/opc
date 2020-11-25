@@ -4,8 +4,10 @@ import { App } from "../../js/App.js"
 let appName = "音乐";
 let icon = "../../images/applications/music.png";
 
-let appTemplate = `<div class="template-main music">
-    <div class="music-left">
+
+function loadingMusic () {
+    let musicTemplate = `
+    <div class="main-left">
         <div class="title">在线音乐</div>
         <ul class="list">
             <li>推荐</li>
@@ -23,7 +25,7 @@ let appTemplate = `<div class="template-main music">
             <li>音乐网盘</li>
         </ul>
     </div>
-    <div class="music-right">
+    <div class="main-right">
         <input placeholder="搜索音乐"></input>
         <div class="title">我喜欢</div>
         <ul class="cate">
@@ -77,13 +79,14 @@ let appTemplate = `<div class="template-main music">
             </tr>
         </table>
         <div class="player"></div>
-    </div>
-</div>`;
-
+    </div>`;
+    let music = opc.createNode("div", "main")
+    music.innerHTML = musicTemplate
+    return music;
+}
 export let music = {
     name: appName,
     icon: icon,
-    appTemplate: appTemplate,
 
     start () {
 
@@ -96,6 +99,9 @@ export let music = {
                 appName: appName,
             });
             app.openApp(app)
+
+            let musicWindow = document.querySelector(".音乐")
+            musicWindow.append(loadingMusic())
         } else {
             console.log(`${appName}已经打开！`);
         }

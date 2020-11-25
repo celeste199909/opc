@@ -1,14 +1,14 @@
 .window.设置 {
     width: 800px;
     height: 500px;
-    background-color: #8ca1dd !important;
+    background-color: #f0f0f0 !important;
 }
 
 /* 工具 返回 向前 */
 .设置 .tools {
     position: absolute;
     top: 17.5px;
-    left: 120px;
+    left: 100px;
 }
 
 .设置 .tools img {
@@ -71,4 +71,47 @@
 
 .设置 .setting-list .setting-item:hover {
     border: 1px solid #327dfb;
+}
+
+/* 外观 appearance */
+.appearance {
+    padding: 20px 80px;
+}
+
+.appearance > div {
+    margin: 20px 0;
+}
+
+.appearance .wallpaper {
+    display: flex;
+    flex-direction: column;
+}
+
+.appearance .wallpaper div {
+    margin: 10px 0;
+}
+
+.appearance .wallpaper img {
+    width: 120px;
+    height: 70px;
+    border-radius: 4px;
+    margin-right: 20px;
+    border: 2px solid #ffffff00;
+}
+.appearance .wallpaper img:hover,
+.appearance .wallpaper img.selected {
+    border: 2px solid #327dfb;
+}
+
+.appearance > div:nth-child(2),
+.appearance > div:nth-child(3),
+.appearance > div:nth-child(4) {
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.appearance > div:nth-child(4) span {
+    margin-left: 20px;
 }

@@ -9,7 +9,7 @@ import "./components/components.js";
 
 let { mainEl, desktopEl, dockEl, launchpadAppsEl} = opc;
 
-console.log(dockEl);
+// console.log(dockEl);
 
 // 初始化
 (function init() {
@@ -50,8 +50,8 @@ function renderIcon(area, element, index) {
     }
     function handleDragEnd(e) {
         e.preventDefault()
-        let left = e.clientX - offsetX - 16 - 30;
-        let top = e.clientY - offsetY - 16 - 5;
+        let left = e.clientX - offsetX - 48;
+        let top = e.clientY - offsetY;
 
         e.path[1].style.left = left + "px";
         e.path[1].style.top = top + "px";

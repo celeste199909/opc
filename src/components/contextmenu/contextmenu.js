@@ -41,12 +41,16 @@ function createCustomContextMenu(e) {
   // 创建 ul
   let ul = opc.createNode("ul")
   // 创建 li
+  let settingPad = opc.createNode("li", "setting-pad", "设置面板");
   let changeWallpaper = opc.createNode("li", "menu-wallpaper", "修改桌面背景")
+  let fullScreen = opc.createNode("li", "menu-fullscreen", "全屏/退出全屏")
 
   let lockScreen;
   opc.enterLockScreen && (lockScreen = opc.createNode("li", "menu-lock-screen", "锁定屏幕", opc.enterLockScreen))
-
+  
+  ul.appendChild(settingPad)
   ul.appendChild(changeWallpaper)
+  ul.appendChild(fullScreen)
   opc.enterLockScreen && ul.appendChild(lockScreen)
 
 

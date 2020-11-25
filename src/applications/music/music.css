@@ -1,11 +1,12 @@
 /* 覆盖默认窗口样式 */
 .window.音乐 {
-    width: 400px;
-    height: 400px;
-    backdrop-filter: blur(24px);
+    width: 800px;
+    height: 600px;
     border-bottom: 1px solid #1a191911;
     position: absolute;
     color: rgb(255, 255, 255);
+    background-color: rgba(5, 5, 5, 0.924);
+    backdrop-filter: blur(5px);
     /* top: 50%;
     left: 50%; */
     top: 50px;
@@ -15,51 +16,49 @@
     overflow: hidden;
 
 }
-.window .template-wrapper {
 
-}
 /* 导航栏样式 */
-.music {
+.音乐 .main {
     display: flex;
     padding: 10px 15px;
 }
 /* 左 */
-.music .music-left {
+.main .main-left {
     padding: 10px 15px;
     flex: 3;
 }
 
-.music .music-left .title {
+.main .main-left .title {
     color: rgb(144, 144, 144);
     margin-bottom: 20px;
 
 }
 
-.music .music-left .list {
+.main .main-left .list {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.music .music-left .list li {
+.main .main-left .list li {
     height: 2rem;
     line-height: 2rem;
     border-radius: 4px;
     text-indent: 1rem;
     user-select: none;
 }
-.music .music-left .list li:hover {
+.main .main-left .list li:hover {
     background-color: #327dfb;
 }
 /* 右 */
 
-.music .music-right {
+.main .main-right {
     padding: 10px 15px;
     flex: 8;
     position: relative;
     box-sizing: border-box;
 }
-.music .music-right input {
+.main .main-right input {
     width: 200px;
     height: 30px;
     border-radius: 15px;
@@ -69,33 +68,35 @@
     background-color: #333;
     caret-color:#fff;
     color: #fff;
+
+    z-index: 300;
 }
-.music .music-right .title {
+.main .main-right .title {
     margin: 20px 2px;
     font-size: 25px;
 }
-.music .music-right .cate {
+.main .main-right .cate {
     display: flex;
     margin: 10px 2px;
 }
 
-.music .music-right .cate li {
+.main .main-right .cate li {
     height: 1.5rem;
     line-height: 1.5rem;
     margin-right: 20px;
 }
 /* 音乐列表 */
-.music .music-right .music-list {
+.main .main-right .music-list {
     width: 100%;
     border-collapse: collapse; 
     margin: 0;
 }
 
-.music .music-right .music-list tr {
+.main .main-right .music-list tr {
     text-align: left;
     height: 2.5rem;
 }
-.music .music-right .music-list .td:hover {
+.main .main-right .music-list .td:hover {
     background-color: #7a7a7a5d;
 }
 
