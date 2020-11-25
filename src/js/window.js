@@ -30,7 +30,7 @@ export class Window {
         })
 
         maximizeBtn.addEventListener("mousedown", (e) => {
-            opc.fakerFullScreen(window)
+            opc.fakerFullScreen(e, window)
         })
 
         closeBtn.addEventListener("mousedown", (e) => {

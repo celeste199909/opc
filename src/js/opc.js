@@ -39,16 +39,39 @@ function fullScreen (targetEl) {
     targetEl.requestFullscreen();
 }
 
-// 元素全屏 fake
-function fakerFullScreen (targetEl) {
-    targetEl.style.width = "100vw";
-    targetEl.style.height = "100vh";
-    targetEl.style.position = "fixed";
-    targetEl.style.top = 0;
-    targetEl.style.left = 0;
-    targetEl.style.zIndex = "200";
-    opc.dragagbleArea.removeEventListener("mousedown", opc.handleMousedown)
-    document.body.removeEventListener("mousemove", opc.handleMousemove)
+// 假装全屏 
+function fakerFullScreen (e, targetEl) {
+    let originalWidth = e.path[2].offsetWidth;
+    let originalHeight = e.path[2].offsetHeight;
+
+    let clientWidth = document.body.clientWidth;
+    let clientHeight = document.body.clientHeight;
+
+    console.log(originalWidth, originalHeight);
+    console.log(clientWidth, clientHeight);
+
+    if (originalWidth == clientWidth && originalHeight == clientHeight) {
+        targetEl.style.width = 700 + "px" ;
+        targetEl.style.height = 500 + "px";
+        targetEl.style.borderRadius = 0.5 + "rem";
+        targetEl.style.position = "absolute";
+        targetEl.style.top = 100 + "px";
+        targetEl.style.left = 100 + "px";
+        // targetEl.style.zIndex = "200";
+        opc.dragagbleArea.addEventListener("mousedown", opc.handleMousedown)
+        document.body.addEventListener("mousemove", opc.handleMousemove)
+
+    } else {
+        targetEl.style.width = "100vw";
+        targetEl.style.height = "100vh";
+        targetEl.style.borderRadius = 0;
+        targetEl.style.position = "fixed";
+        targetEl.style.top = 0;
+        targetEl.style.left = 0;
+        targetEl.style.zIndex = "200";
+        opc.dragagbleArea.removeEventListener("mousedown", opc.handleMousedown)
+        document.body.removeEventListener("mousemove", opc.handleMousemove)
+    }
 }
 
 // 退出全屏

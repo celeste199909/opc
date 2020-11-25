@@ -40,7 +40,6 @@ function loadingSettingPad() {
         let settingItemName = opc.createNode("span", "name", `${item.name}`)
 
         if (item.name == "外观") {
-            console.log(1);
             settingItem.addEventListener("mousedown", (e) => {
                 let templateMain = document.querySelector(".设置 .main")
                 let settingList = document.querySelector(".设置 .setting-list")
